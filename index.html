@@ -35,8 +35,64 @@
         <li>Start Studying For Driver's Test</li>
     </ol>
 
+    <h3>Unicode Practice!</h3>
+    <p>&#128516;</p>
+    <p>&#78;&#121;&#97;&#107;&#101;&#104; &#83;&#97;&#102;&#102;&#97;&#45;&#83;&#111;&#110;&#103;&#97;</p>
+    <p>&#128528; &#128511; &#128517;</p>
+
+    <form action="post">
+        <label for="name">First name</label>
+        <input type="text" name="name" id="first_name">
+        <!-- THE "name" ATTRIBUTES HAVE TO MATCH EXACTLY! -->
+        <label for="status">Alive?</label>
+        <input type="checkbox" name="status" id="alive">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user.name">
+        <label for="body">Message:</label>
+        <textarea name="user.message" id="body" cols="30" rows="10"></textarea>
+        <button typ="submit">Submit</button>
+        <input type="submit" value="Submit">
+        <fieldset>
+            <legend>Subsection A</legend> <!-- THE <legend> TAG ALWAYS HAS TO BE THE SECOND LINE AFTER <fieldset>! -->
+            <label for="nickname">Nickname:</label>
+            <input type="text" name="nickname">
+            <label for="email2">Email(secondary):</label>
+            <input type="text" name="email2">
+            <label for="age">Age:</label>
+            <input type="number" name="age">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <input readonly>Read Only</button>
+            <input type="file" id="img" name="img" accept="image/*">
+            <input type="checkbox" id="condition1" name="condition1" value="Bike">
+            <label for="condition1"> I have trouble breathing </label>
+            <input type="checkbox" id="condition2" name="condition2" value="Bike">
+            <label for="condition2"> I have a stuffy nose </label>
+            <input type="checkbox" id="condition3" name="condition3" value="Bike">
+            <label for="condition3"> I feel spaced out </label>
+            <input type="checkbox" id="condition4" name="condition4" value="Bike">
+            <label for="condition4"> I have trouble walking </label>
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="pwd" minlength="8">
+            <input type="radio" id="age1" name="age" value="30">
+            <label for="age1">0 - 12</label>
+            <input type="radio" id="age2" name="age" value="60">
+            <label for="age2">13 - 20</label>  
+            <input type="radio" id="age3" name="age" value="100">
+            <label for="age3">21+</label>
+        </fieldset>
+    </form>
+
+    <a href="./aboutUs.html">About Us</a>
+
+    <!--
+
     <script src="adventureGame.js">
 
     </script>
+
+     -->
 </body>
 </html>

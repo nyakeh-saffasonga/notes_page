@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form Example</title>
+    <link rel="stylesheet" href="payForm.css">
+</head>
+<body>
+    <form action="method">
+        <h1>Payment Form</h1>
+        <p>Required Feilds are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+        <section>
+            <h2>Contact Information</h2>
+            <fieldset>
+                <legend>Title</legend>
+                <ul>
+                    <li><label><input type="radio" name="cards">Ace</label></li>
+                    <li><label><input type="radio" name="cards">King</label></li>
+                    <li><label><input type="radio" name="cards">Queen</label></li>
+                </ul>
+            </fieldset>
+            <p>
+                <label for="name">
+                    <span>Name:</span>
+                    <strong>
+                        <abbr title="name">*</abbr>
+                    </strong>
+                </label>
+                <input type="text" id="name" name="username">
+            </p>
+            <p>
+                <label for="mail">
+                    <span>Mail:</span>
+                    <strong>
+                        <abbr title="mail">*</abbr>
+                    </strong>
+                </label>
+                <input type="email" id="mail" name="useremail">
+            </p>
+            <p>
+                <label for="password">
+                    <span>Password:</span>
+                    <strong>
+                        <abbr title="password">*</abbr>
+                    </strong>
+                </label>
+                <input type="password" id="pwd" name="password">
+            </p>
+        </section>
+        <section>
+            <h1>Payment Information</h1>
+            <p>
+                <label for="card">Card Type:</label>
+                <select name="usercard" id="card">
+                    <option value="visa">Visa</option>
+                    <option value="mc">MasterCard</option>
+                    <option value="amex">American Express</option>
+                    <option value="cp1">Capital One</option>
+                </select>
+            </p>
+            <p>
+                <label for="number">
+                    <span>Card Number:</span>
+                    <strong>
+                        <abbr title="required">*</abbr>
+                    </strong>
+                </label>
+                <input type="number" id="number" name="cardnumber">
+            </p>
+            <p>
+                <label for="">
+                    <span>Expiration Date</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                    <em>formatted as mm/dd/yyyy</em>
+                </label>
+                <input type="date" name="Expiration" id="date">
+            </p>
+        </section>
+        <section>
+            <p>
+                <button type="submit">Validate Payment</button>
+            </p>
+        </section>
+    </form>
+</body>
+</html>
