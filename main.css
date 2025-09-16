@@ -1,0 +1,27 @@
+@import url('./secondary.css');
+.firstCar {
+            transform: translateX(350px);
+            transform: scale(0.5);
+            transform: rotate(275deg);
+}
+
+.outer {
+    /* border: 2px solid black; */
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    /* border, margin, padding, position | TOP RIGHT BOTTOM LEFT */
+}
+
+.box {
+    padding: 30px;
+    width: calc(90% - 60px);
+    background-color: rebeccapurple;
+    color: white;
+}
+
+body {
+    background-image: url("./images/parabolic-pentagon.svg");
+    background-repeat: none;
+    background-size: cover;
+}

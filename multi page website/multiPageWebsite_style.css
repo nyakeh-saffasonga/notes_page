@@ -1,21 +1,16 @@
-body { 
+body {
+    background-image: url("./347040.png");
+    background-repeat: none;
+    background-size: cover;
     color: white;
 }
 
-header { 
-    color: white;
+img {
+  margin: auto;
 }
 
-nav { 
-    color: white;
-}
-
-main { 
-    color: white;
-}
-
-footer { 
-    color: white;
+.border {
+  border: 10px solid white;
 }
 
 a {
