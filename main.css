@@ -25,3 +25,25 @@ body {
     background-repeat: none;
     background-size: cover;
 }
+
+a{color: hotpink;}
+a[href="www.west-mec.org"]{color: orange;}
+a[href="www.google.com"]{color: green;}
+a:hover{color: rebeccapurple; font-size: xx-large;}
+a:visited{
+    color: yellow;
+}
+
+p::first-letter{
+    color: red;
+    font-size: larger;
+    font-family: fantasy;
+}
+
+div > p {
+    color: peru;
+}
+
+footer, header, nav {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

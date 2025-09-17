@@ -1,8 +1,8 @@
 body {
-    background-image: url("./347040.png");
-    background-repeat: none;
-    background-size: cover;
-    color: white;
+  background-image: url("./347040.png");
+  background-repeat: none;
+  background-size: cover;
+  color: white;
 }
 
 img {
@@ -14,5 +14,11 @@ img {
 }
 
 a {
-    color: white;
+  color: white;
+}
+
+button {
+  width: 150px;
+  height: 25px;
+  background-color: white;
 }
