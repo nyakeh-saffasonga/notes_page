@@ -21,18 +21,17 @@
 }
 
 body {
-    background-image: url("./images/parabolic-pentagon.svg");
+    background-image: url("./parabolic-pentagon.svg");
     background-repeat: none;
     background-size: cover;
 }
 
-a{color: hotpink;}
 a[href="www.west-mec.org"]{color: orange;}
-a[href="www.google.com"]{color: green;}
+a[href="http://www.Google.com"]{color: green;}
 a:hover{color: rebeccapurple; font-size: xx-large;}
-a:visited{
+/* a:visited{
     color: yellow;
-}
+} */
 
 p::first-letter{
     color: red;
@@ -46,4 +45,95 @@ div > p {
 
 footer, header, nav {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a[href="http://Google.com"]::first-letter {
+    color: red;
+    content: ".com";
+}
+
+a[href="http://Wikipedia.com"]::first-letter {
+    color: lightblue;
+    content: ".com";
+}
+
+a[href="http://W3schools.com"]::first-letter {
+    color: limegreen;
+    content: ".com";
+}
+
+a[href="http://Mdn.com"]::first-letter{
+    color: blue;
+    content: ".com";
+}
+
+a[href="http://github.com"]:hover {
+    color: green;
+    content: ".com";
+}
+
+a[href="http://www.google.com"]:hover {
+    text-underline-offset: 10000px;
+}
+
+a[href="http://Wikipedia.com"]:hover {
+   text-underline-offset: 10000px;
+}
+
+a[href="http://W3schools.com"]:hover {
+    text-underline-offset: 10000px;
+}
+
+a[href="http://Mdn.com"]:hover{
+    text-underline-offset: 10000px;
+}
+
+a[href="http://github.com"]:hover {
+    text-underline-offset: 10000px;
+}
+
+
+a[href="http://www.google.com"]::after {
+    content: ".com";
+}
+
+a[href="http://Wikipedia.com"]::after {
+   content: ".com";
+}
+
+a[href="http://W3schools.com"]::after {
+    content: ".com";
+}
+
+a[href="http://Mdn.com"]::after {
+    content: ".com";
+}
+
+a[href="http://github.com"]::after {
+    content: ".com";
+}
+
+a[href="http://www.google.com"]::first-letter {
+    font-size: larger;
+    font-family: fantasy;
+}
+
+a[href="http://Wikipedia.com"]::first-letter {
+    font-size: larger;
+    font-family: fantasy;
+}
+
+a[href="http://W3schools.com"]::first-letter {
+    font-size: larger;
+    font-family: fantasy;
+}
+
+a[href="http://Mdn.com"]::first-letter {
+    font-size: larger;
+    font-family: fantasy;
+}
+
+a[href="http://github.com"]::first-letter {
+    font-size: larger;
+    font-family: fantasy;
 }
