@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Code-Along</title>
+    <style>
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            font: 1rem;
+        }
+
+        .box {
+            float: left;
+            width: 150px;
+            height: 100px;
+            border-radius: 5px;
+            background-color: rgb(207, 232,220);
+            padding: 1em;
+        }
+
+        .special {
+            background-color: rgb(79, 185, 227);
+            padding: 10px;
+            color: #fff;
+        }
+
+        /* .cleared {
+            clear: left;
+        } */
+
+        .wrapper {
+            background-color: rgb(79, 185, 227);
+            padding: 10px;
+            color: #fff;
+        }
+
+        .wrapper::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Float Example</h1>
+    <div class="wrapper">
+        <div class="box">Float</div>
+    </div>
+    <p class="special">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, assumenda perspiciatis numquam fugiat ipsum provident.</p>
+    <p class="cleared">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti exercitationem ex magni ea expedita tempora quasi incidunt beatae nam unde blanditiis iure fugit voluptatum qui totam error, perspiciatis aperiam eum dolorem in. Et inventore porro rem veniam officiis eius sit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis laudantium consectetur molestias suscipit nobis temporibus maxime voluptas vero voluptatem fugiat voluptatibus expedita recusandae quidem similique, hic aperiam nisi id? Eius architecto sapiente corrupti mollitia autem eos voluptatum aliquid recusandae expedita.</p>
+</body>
+</html>
