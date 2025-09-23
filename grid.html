@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Walkthrough</title>
+    <style>
+        /* basic page theme setup */
+        :root {
+            --bg: #0f172a;
+            --card: #111827;
+            --ink: #e5e7eb;
+            --accent: #60a5fa;
+            --accent2: #34d399;
+            --accent3: #f59e0b;
+            --accent4: #ae00ff;
+        }
+
+        /* custom CSS */
+        *{
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-size: 1rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: var(--ink);
+            background: linear-gradient(67deg, red, var(--bg));
+            background: radial-gradient(var(--bg), var(--accent), var(--accent2));
+            padding: 32px;
+            display: grid;
+            place-items: start center;
+            gap: 28px;
+        }
+
+        .wrapper {
+            width: min(110px, 96vw);
+            display: grid;
+            gap: 32px;
+        }
+
+        .card {
+            background-color: var(--bg);
+            border: 1px solid rgba(0, 0, 0, 0.6);
+            border-radius: 18px;
+            box-shadow: 0 10px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            padding: 18px 18px 22px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 14px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px dashed rgba(0, 0, 0, 0.15);
+        }
+
+        .cell {
+            display: grid;
+            place-content: center;
+            font-weight: 600;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 1px solid black;
+            border-radius: 10px;
+            height: 64px;
+        }
+
+        .demo-1 .grid {
+            grid-template-columns: 150px 1fr 2fr;
+            /* because there were no rows made, they were autocreated */
+        }
+
+        .demo-2 .grid {
+            grid-template-columns: /* edits the columns */ repeat(3, 1fr);
+            grid-template-rows: /* edits the rows */ 80px 120px 80px;
+        }
+
+        .demo-3 .grid {
+            grid-template-columns: 180px minmax(180px, 1fr) 2fr;
+            /* the minmax functions calculates the minimum and mazimum values based on what device the user is using; for example, at the MINIMUM it can be 180px but at MAXIMUM it can be 1 fractional unit */
+            grid-template-rows: 90px minmax(120px, auto) 90px;
+            gap: 60px;
+        }
+
+        .cell1 {
+            grid-area: header;
+            background-color: var(--accent);
+            color: white;
+            font-size: xx-large;
+        }
+
+        .cell2 {
+            grid-area: footer;
+            background-color: var(--accent2);
+            color: white;
+            font-size: xx-large;
+        }
+
+        .cell3 {
+            grid-area: main;
+            background-color: var(--accent3);
+            color: white;
+            font-size: xx-large;
+        }
+
+        .cell4 {
+            grid-area: aside;
+            background-color: red;
+            color: white;
+            font-size: xx-large;
+        }
+
+        .cell5 {
+            grid-area: navbar;
+            background-color: red;
+            color: white;
+            font-size: xx-large;
+        }
+
+        .cell6 {
+            grid-area: article;
+            background-color: red;
+            color: white;
+            font-size: xx-large;
+        }
+
+        .cell7 {
+            grid-area: sidebar;
+            background-color: red;
+            color: white;
+            font-size: xx-large;
+        }
+
+        /* .demo-4 .grid {
+            grid-template-areas: 
+            "header header header header"
+            "main main none aside"
+            "footer footer footer footer";
+        } */
+
+        .demo-5 .grid{
+            grid-template-areas: 
+            "header header header ."
+            "main main navbar navbar"
+            "main main article sidebar"
+            "aside . . ."
+            ". footer footer footer";
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>CSS Grid Layout</h1>
+            <p class="sub">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </header>
+        <section class="card demo-1">
+            <h2>3 Column setup</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <div class="grid">
+                <div class="cell">1</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+                <div class="cell">4</div>
+                <div class="cell">5</div>
+                <div class="cell">6</div>
+                <div class="cell">7</div>
+                <div class="cell">8</div>
+                <div class="cell">9</div>
+            </div>
+        </section>
+
+        <section class="card demo-2">
+            <h2>3 Column setup</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <div class="grid">
+                <div class="cell">1</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+                <div class="cell">4</div>
+                <div class="cell">5</div>
+                <div class="cell">6</div>
+                <div class="cell">7</div>
+                <div class="cell">8</div>
+                <div class="cell">9</div>
+            </div>
+        </section>
+
+        <section class="card demo-3">
+            <h2>3 Column setup</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <div class="grid">
+                <div class="cell">1</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+                <div class="cell">4</div>
+                <div class="cell">5</div>
+                <div class="cell">6</div>
+                <div class="cell">7</div>
+                <div class="cell">8</div>
+                <div class="cell">9</div>
+            </div>
+        </section>
+
+        <section class="card demo-4">
+            <h2>3 Column setup</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <div class="grid">
+                <!-- <div class="cell1">1</div>
+                <div class="cell2">2</div>
+                <div class="cell3">3</div>
+                <div class="cell4">4</div> -->
+            </div>
+        </section>
+
+        <section class="card demo-5">
+            <h2>Grid Area Practice</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <div class="grid">
+                <div class="cell1">Header</div>
+                <div class="cell2">Footer</div>
+                <div class="cell3">Main</div>
+                <div class="cell4">Aside</div>
+                <div class="cell5">Navbar</div>
+                <div class="cell6">Article</div>
+                <div class="cell7">Sidebar</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

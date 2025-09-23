@@ -1,0 +1,13 @@
+div p span{color: white}
+nav ul > li{color: white}
+article h2 > h3{color: white}
+section + p{color: white}
+footer a ul > li{color: white}
+div.gallery > img+span {}
+
+nav>ul>li*5>a
+div.card>img+div.content>h2>p*2
+form>input:text+input:email+button
+section>article*3>h3+p
+header>h1+nav>a*4
+div.grid>div.item*6>p
