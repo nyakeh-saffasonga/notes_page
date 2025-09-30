@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Practice</title>
+    <style> 
+        :root {
+            --bg: #0f172a;
+            --panel: #111827;
+            --card: #1f2937;
+            --accent: #60a5fa;
+            --text: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            background: linear-gradient(180deg, var(--bg), #0b1224 40%);
+        }
+
+        .wrapper {
+            width: min(950px, 95vw);
+        }
+
+        .panel {
+            background-color: var(--panel);
+            border: 1px solid #1f2337;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+            margin-bottom: 18px;
+        }
+
+        /* Flex CSS */
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            padding: 12px;
+            border: 1px dashed #2b3a66;
+            border-radius: 12px;
+            min-width: 160px;
+        }
+
+        .item span {
+            display: block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            color: var(--accent);
+            background: rgba(90, 165, 250, .16);
+            border: 1px solid white;
+        }
+        .row {flex-direction: row;}
+        .row-reverse {flex-direction:row-reverse;}
+        .column {flex-direction: column;}
+        .column-reverse {flex-direction: column-reverse;}
+        .nowrap {flex-wrap: nowrap;}
+        .wrap {flex-wrap: wrap;}
+        .wrap-reverse {flex-wrap: wrap-reverse;}
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="panel">
+            <h1>Flex + Flex Direction</h1>
+            <p>Don't forget the defaults!</p>
+        </div>
+
+        <div class="panel">
+            <h2>Playground</h2>
+            <div class="container row wrap-reverse" id="play">
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item"><span>3</span></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+                <div class="item"><span>6</span></div>
+                <div class="item"><span>7</span></div>
+                <div class="item"><span>8</span></div>
+                <div class="item"><span>9</span></div>
+                <div class="item"><span>10</span></div>
+                <div class="item"><span>11</span></div>
+                <div class="item"><span>12</span></div>
+                <div class="item"><span>13</span></div>
+                <div class="item"><span>14</span></div>
+                <div class="item"><span>15</span></div>
+                <div class="item"><span>16</span></div>
+                <div class="item"><span>17</span></div>
+                <div class="item"><span>18</span></div>
+                <div class="item"><span>19</span></div>
+                <div class="item"><span>20</span></div>
+                <div class="item"><span>21</span></div>
+                <div class="item"><span>22</span></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

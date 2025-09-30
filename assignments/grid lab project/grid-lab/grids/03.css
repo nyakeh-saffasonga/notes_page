@@ -1,0 +1,36 @@
+.wrapper {
+    display: grid;
+    grid-template-rows: 1fr minmax(50px, 0.5fr) 0.5fr 2fr;
+    grid-template-columns: repeat(4, 1fr);
+    object-fit: cover;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+    grid-template-areas: "img01 img02 img03 img04"
+    "img05 img06 img07 img08"
+    "img09 img10 img11 img12"
+    "img13 img14 img15 img16";
+}
+
+img {
+    vertical-align: middle;
+}
+
+.img01 {grid-area: img01; border: 10px solid black;}
+.img02 {grid-area: img02; border: 10px solid black;}
+.img03 {grid-area: img03; border: 10px solid black;}
+.img04 {grid-area: img04; border: 10px solid black;}
+.img05 {grid-area: img05; border: 10px solid black;}
+.img06 {grid-area: img06; border: 10px solid black;}
+.img07 {grid-area: img07; border: 10px solid black;}
+.img08 {grid-area: img08; border: 10px solid black;}
+.img09 {grid-area: img09; border: 10px solid black;}
+.img10 {grid-area: img10; border: 10px solid black;}
+.img11 {grid-area: img11; border: 10px solid black;}
+.img12 {grid-area: img12; border: 10px solid black;}
+.img13 {grid-area: img13; border: 10px solid black;}
+.img14 {grid-area: img14; border: 10px solid black;}
+.img15 {grid-area: img15; border: 10px solid black;}
+.img16 {grid-area: img16; border: 10px solid black;}
