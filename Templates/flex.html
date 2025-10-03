@@ -41,6 +41,7 @@
         .container {
             display: flex;
             flex-direction: row;
+            height: 50vh;
             gap: 12px;
             padding: 12px;
             border: 1px dashed #2b3a66;
@@ -56,6 +57,7 @@
             background: rgba(90, 165, 250, .16);
             border: 1px solid white;
         }
+
         .row {flex-direction: row;}
         .row-reverse {flex-direction:row-reverse;}
         .column {flex-direction: column;}
@@ -63,11 +65,31 @@
         .nowrap {flex-wrap: nowrap;}
         .wrap {flex-wrap: wrap;}
         .wrap-reverse {flex-wrap: wrap-reverse;}
+        .align-content{align-content: center;}
+        .align-items{align-items: flex-start;}
+        .align-self{align-self: flex-end;}
+
+        /* flex: flex-grow flex-shrink flex-basis */
+        .item-flex1 {
+            flex: 1 1 200px;
+            border: 1px solid white;
+        }
+
+        .item-flex2 {
+            flex: 5 1 200px;
+            border: 1px solid white;
+        }
+
+        .item-flex3 {
+            flex: 1 1 200px;
+            border: 1px solid white;
+        }
 
     </style>
 </head>
 <body>
-    <div class="wrapper">
+    <!-- <div class="wrapper"> -->
+    <div>
 
         <div class="panel">
             <h1>Flex + Flex Direction</h1>
@@ -76,12 +98,12 @@
 
         <div class="panel">
             <h2>Playground</h2>
-            <div class="container row wrap-reverse" id="play">
-                <div class="item"><span>1</span></div>
-                <div class="item"><span>2</span></div>
-                <div class="item"><span>3</span></div>
-                <div class="item"><span>4</span></div>
-                <div class="item"><span>5</span></div>
+            <div class="container row wrap align-items" id="play">
+                <div class="item" style="order:5"><span>1</span></div>
+                <div class="item" style="order:4"><span>2</span></div>
+                <div class="item" style="order:3"><span>3</span></div>
+                <div class="item" style="order:2"><span>4</span></div>
+                <div class="item" style="order:1"><span>5</span></div>
                 <div class="item"><span>6</span></div>
                 <div class="item"><span>7</span></div>
                 <div class="item"><span>8</span></div>
@@ -89,16 +111,14 @@
                 <div class="item"><span>10</span></div>
                 <div class="item"><span>11</span></div>
                 <div class="item"><span>12</span></div>
-                <div class="item"><span>13</span></div>
+                <div class="item align-self"><span>13</span></div>
                 <div class="item"><span>14</span></div>
-                <div class="item"><span>15</span></div>
-                <div class="item"><span>16</span></div>
-                <div class="item"><span>17</span></div>
-                <div class="item"><span>18</span></div>
-                <div class="item"><span>19</span></div>
-                <div class="item"><span>20</span></div>
-                <div class="item"><span>21</span></div>
-                <div class="item"><span>22</span></div>
+                
+            </div>
+            <div id="part2" class="container">
+                <div class="item-flex1"><span>1</span></div>
+                <div class="item-flex2"><span>2</span></div>
+                <div class="item-flex3"><span>3</span></div>
             </div>
         </div>
 

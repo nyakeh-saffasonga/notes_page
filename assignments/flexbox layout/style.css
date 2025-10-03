@@ -1,0 +1,78 @@
+* {
+    border-radius: 15cap;
+    color:white;
+}
+
+body {
+    background-image: linear-gradient(75deg, rgb(21, 21, 21), rgb(7, 7, 71));
+    height: 75vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    padding: 3vh;
+}
+
+header {
+    display: flex;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    width: 90vw;
+    height: 3vw;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header .logo-Title {
+    display: flex;
+    align-self: center;
+    width: 15vw;
+    justify-content: space-evenly;
+}
+
+header .logo-Title img {
+    align-self: center;
+}
+
+header nav {
+    display: flex;
+    align-self: center;
+    width: 30vw;
+    justify-content: space-evenly;
+    
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    width: 90vw;
+    height: 3vw;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main .sidebar {
+    flex: 0 0 260px; 
+}
+
+main .article {
+    flex: 1 1 0;
+}
+
+
+footer {
+    
+}
+
+
+nav {
+    display: flex;
+}

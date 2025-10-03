@@ -9,3 +9,18 @@ body {
 img { 
     max-width: 100%; display: block; 
 }
+
+.home {
+    scale: 150%;
+    position: relative;
+    top: 20px
+}
+
+.home h1 {
+    text-align: center;
+}
+
+.home .home-aTags {
+    text-align: center;
+}
+

@@ -1,13 +1,13 @@
 .wrapper {
     display: grid;
-    grid-template-rows: 1fr minmax(50px, 0.5fr) 0.5fr 2fr;
+    grid-template-rows: 1fr minmax(50px, 1fr) 1fr 1fr;
     grid-template-columns: repeat(4, 1fr);
     object-fit: cover;
     align-content: center;
     justify-content: center;
     align-items: center;
     justify-items: center;
-    gap: 20px;
+    gap: 20px 20px;
     grid-template-areas: "img01 img02 img03 img04"
     "img05 img06 img07 img08"
     "img09 img10 img11 img12"

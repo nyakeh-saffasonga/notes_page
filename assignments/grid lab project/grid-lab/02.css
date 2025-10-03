@@ -1,0 +1,47 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    grid-template-rows: 70vh 30vh;
+    grid-template-areas: "hero hero"
+    "sidebar content";
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+    gap: 10px;
+}
+
+.hero {
+    grid-area: hero;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-justify: center;
+    color: aliceblue;
+    border: 10px solid black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    border: 10px solid black;
+    background-color: black;
+    color: white;
+}
+
+.content {
+    grid-area: content;
+    border: 10px solid black;
+    background-color: black;
+    color: white;
+}
+
+
+
