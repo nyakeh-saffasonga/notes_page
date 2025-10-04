@@ -1,42 +1,51 @@
 * {
+    box-sizing: border-box;
     border-radius: 15cap;
     color:white;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-image: linear-gradient(75deg, rgb(21, 21, 21), rgb(7, 7, 71));
-    height: 75vw;
+    width: 95vw;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
-    align-content: space-around;
-    padding: 3vh;
+    place-items: start center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2vh;
+    gap: 2vh;
 }
+
+/* header */
 
 header {
     display: flex;
     border: 4px solid #1f2337;
     border-radius: 14px;
-    padding: 18px;
+    padding: 6vh;
     box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
-    width: 90vw;
+    width: 100%;
     height: 3vw;
     flex-direction: row;
     justify-content: space-between;
 }
 
-header .logo-Title {
+header > .logo-Title {
     display: flex;
     align-self: center;
-    width: 15vw;
+    width: 17%;
     justify-content: space-evenly;
 }
 
-header .logo-Title img {
+header > .logo-Title > img {
     align-self: center;
 }
 
-header nav {
+header > nav {
     display: flex;
     align-self: center;
     width: 30vw;
@@ -44,35 +53,118 @@ header nav {
     
 }
 
-header nav a {
-    text-decoration: none;
-}
 
-main {
+/* hero */
+
+.heroBand {
     display: flex;
     border: 4px solid #1f2337;
     border-radius: 14px;
     padding: 18px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    width: 100%;
+    align-self: center;
+    flex-direction: row;
+    justify-content: space-evenly;   
+}
+
+.heroBand > img {
+    display: flex;
+    align-self: center;
+    width: 45vw;
+    height: 15vw;
+    justify-content: space-evenly;
+}
+
+.heroBand > div {
+    padding-left: 3vh;
+    align-content: center;
+}
+
+.heroBand > div > button {
+    border: 0cap;
+    width: 20vh; 
+    height: 7vh;
+    font-size: 3vh; 
+}
+
+.heroBand > div > .button1 {
+    background-color: rgba(35, 117, 249);
+    color: black;
+}
+
+.heroBand > div > .button2 {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
+    border: 0.5vh solid black;
+}
+
+
+/* main */
+
+main {
+    display: flex;
     width: 90vw;
-    height: 3vw;
+    padding: 18px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sidebar {
+
+    display: flex;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+
+    flex: 0 0 25%;
+    justify-content: start;
+    align-self: stretch;
+    margin: 0; 
+
+}
+
+.article {
+
+    display: flex;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    
+
+    flex: 1 1 70%;
+    justify-content: end;
+    margin: 0; 
+    gap: 10px;
+
+}
+
+/* call to action */
+
+.callToAction {
+    display: flex;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
 }
-main .sidebar {
-    flex: 0 0 260px; 
-}
 
-main .article {
-    flex: 1 1 0;
-}
-
+/* footer */
 
 footer {
-    
-}
-
-
-nav {
     display: flex;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
 }
