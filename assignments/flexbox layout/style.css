@@ -118,13 +118,19 @@ main {
     border: 4px solid #1f2337;
     border-radius: 14px;
     padding: 18px;
+    height: 94.7867298578199vh;
     box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
 
-    flex: 0 0 25%;
+    flex: 0 0 260px;
     justify-content: start;
     align-self: stretch;
     margin: 0; 
 
+}
+
+.sidebarText > ul > li > a {
+    color: blue;
+    text-decoration: underline;
 }
 
 .article {
@@ -133,6 +139,7 @@ main {
     border: 4px solid #1f2337;
     border-radius: 14px;
     padding: 18px;
+    height: 94.7867298578199vh;
     box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
     
 
@@ -147,13 +154,24 @@ main {
 
 .callToAction {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
     border: 4px solid #1f2337;
     border-radius: 14px;
-    padding: 18px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
     width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.callToActionButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.callToAction button a {
+    text-decoration: none;
 }
 
 /* footer */
