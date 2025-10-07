@@ -52,13 +52,15 @@
             <article class="article">
                 <section class="articleText">
                     <h2>Article Area</h2>
-                    <p>This section grows to fill the remaining space using flex: 1 1 0 on the article himself.</p>
-                    <div><h4>Card One</h4> <p></p> <a href="#">Learn More</a></div>
-                    <div><h4>Card Two</h4> <p></p> <a href="#">Learn More</a></div>
-                    <div><h4>Card Three</h4> <p></p> <a href="#">Learn More</a></div>
-                    <div><h4>Card Four</h4> <p></p> <a href="#">Learn More</a></div>
-                    <div><h4>Card Five</h4> <p></p> <a href="#">Learn More</a></div>
-                    <div><h4>Card Six</h4> <p></p> <a href="#">Learn More</a></div>
+                    <p>This section grows to fill the remaining space using flex: 1 1 0 on the article itself.</p>
+                </section>
+                <section class="articleCards">
+                    <div class="card1"><h4>Card One</h4> <p>Demonstrates shared sizing with flex-basis.</p> <a href="#">Learn More</a></div>
+                    <div class="card2"><h4>Card Two</h4> <p>Taller card to show cross-axis differences.</p> <a href="#">Learn More</a></div>
+                    <div class="card3"><h4>Card Three</h4> <p>Uses align-self: flex-start to override the row's cross-axis alignment.</p> <a href="#">Learn More</a></div>
+                    <div class="card4"><h4>Card Four</h4> <p>Uses wrapping with gaps and aligned rows.</p> <a href="#">Learn More</a></div>
+                    <div class="card5"><h4>Card Five</h4> <p>All cards use flex: 1 1 350px</p> <a href="#">Learn More</a></div>
+                    <div class="card6"><h4>Card Six</h4> <p>Resize between 1024-1440px to see behavior.</p> <a href="#">Learn More</a></div>
                 </section>
             </article>
 
@@ -72,28 +74,28 @@
         </section>
 
         <footer>
-            <div>
+            <div class="footerDivs">
                 <div>
-                    <h5><strong>Flex Co.</strong></h5>
-                    <h5>Powering modern page layouts.</h5>
+                    <h4><strong><a href="#">Flex Co.</a></strong></h4>
+                    <h5><a href="#">Powering modern page layouts.</a></h5>
                 </div>
                 <div>
-                    <h5><strong>Company</strong></h5>
-                    <h5>About</h5>
-                    <h5>Careers</h5>
-                    <h5>Press</h5>
+                    <h4><strong><a href="#">Company</a></strong></h4>
+                    <h5><a href="#">About</a></h5>
+                    <h5><a href="#">Careers</a></h5>
+                    <h5><a href="#">Press</a></h5>
                 </div>
                 <div>
-                    <h5><strong>Resources</strong></h5>
-                    <h5>Docs</h5>
-                    <h5>Guides</h5>
-                    <h5>API</h5>
+                    <h4><strong><a href="#">Resources</a></strong></h4>
+                    <h5><a href="#">Docs</a></h5>
+                    <h5><a href="#">Guides</a></h5>
+                    <h5><a href="#">API</a></h5>
                 </div>
                 <div>
-                    <h5><strong>Legal</strong></h5>
-                    <h5>Terms</h5>
-                    <h5>Privacy</h5>
-                    <h5>Cookies</h5>
+                    <h4><strong><a href="#">Legal</a></strong></h4>
+                    <h5 style="order: 1;"><a href="#">Terms</a></h5>
+                    <h5><a href="#">Privacy</a></h5>
+                    <h5><a href="#">Cookies</a></h5>
                 </div>
             </div>
         </footer>

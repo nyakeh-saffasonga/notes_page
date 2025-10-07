@@ -2,6 +2,7 @@
     box-sizing: border-box;
     border-radius: 15cap;
     color:white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 a {
@@ -74,6 +75,7 @@ header > nav {
     width: 45vw;
     height: 15vw;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .heroBand > div {
@@ -112,16 +114,19 @@ main {
     gap: 10px;
 }
 
+/* sidebar */
+
 .sidebar {
 
     display: flex;
     border: 4px solid #1f2337;
     border-radius: 14px;
     padding: 18px;
-    height: 94.7867298578199vh;
     box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
 
     flex: 0 0 260px;
+    flex-basis: 1;
+    flex-grow: 0;
     justify-content: start;
     align-self: stretch;
     margin: 0; 
@@ -133,22 +138,93 @@ main {
     text-decoration: underline;
 }
 
+/* article */
+
 .article {
 
     display: flex;
     border: 4px solid #1f2337;
     border-radius: 14px;
     padding: 18px;
-    height: 94.7867298578199vh;
     box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
     
-
+    flex-direction: column;
     flex: 1 1 70%;
+    flex-basis: 1;
+    flex-grow: 1;
     justify-content: end;
     margin: 0; 
     gap: 10px;
 
 }
+
+.articleText {
+    width: 100%;
+}
+
+.articleCards {
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: 10px;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    justify-content: center;
+}
+
+.articleCards > div {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 350px;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    flex-direction: column;
+
+}
+
+.articleCards > div > h4 {
+    margin-top: 5px;
+}
+
+.articleCards > div a {
+    border: 2px solid #1f2337;
+    border-radius: 7px;
+    padding: 7px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.card1 {
+    display: flex;
+    flex-basis: 0;
+}
+
+.card2 {
+    display: flex;
+}
+
+.card3 {
+    display: flex;
+    align-self: flex-start;
+}
+
+.card4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card5 {
+    display: flex;
+}
+
+.card6 {
+    display: flex;
+}
+
 
 /* call to action */
 
@@ -170,6 +246,24 @@ main {
     gap: 1rem;
 }
 
+.callToActionButtons > button {
+    border: 0cap;
+    width: 25vh;
+    height: 8vh;
+    font-size: 100%; 
+}
+
+.callToActionButtons > .button1 {
+    background-color: rgba(35, 117, 249);
+    color: black;
+}
+
+.callToActionButtons > .button2 {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
+    border: 0.5vh solid black;
+}
+
 .callToAction button a {
     text-decoration: none;
 }
@@ -185,4 +279,28 @@ footer {
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    flex-shrink: 0;
 }
+
+.footerDivs {
+    display: flex;
+    flex-direction: row;
+    gap: 35vh;
+    align-content: space-evenly;
+    
+
+}
+
+.footerDivs > div {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.footerDivs > div > h4,h5 {
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+
