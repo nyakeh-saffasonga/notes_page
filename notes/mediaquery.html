@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queryeis and Media Devices</title>
+    <style>
+        :root {
+            --bg: #FA3E69;
+            --panel: ;
+            --card: #533EFA;
+            --text: #CE3EFA;
+            --muted: #9142FA;
+            --accent: #A600FA;
+            --ring: #9142FA;
+            --shadow: 0px 8px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+Z
+        body {
+            margin: 0;
+            font: 1.2rem;
+            color: var(--text);
+            background: linear-gradient(180deg, #eef2ff, #ffffff 50%);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--text);
+        }
+
+        .wrapper {
+            width: min(1100px, 92vw);
+            margin-inline: auto;
+            padding: 24px;
+        }
+
+        .bar {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: .2px;
+        }
+
+        .tag {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .hero {
+            /* display: none;
+            visibility: hidden; */
+            margin: 28px auto 18px;
+            background-color: var(--panel);
+            border: 1px solid var(--text) 10%;
+            box-shadow: var(--shadow);
+            padding: 22px;
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .note {
+            margin-top: 12px;
+            font-size: 1rem;
+            padding: 10px 12px;
+            border: 1px dashed var(--accent) 65%;
+            border-radius: 10px;
+            color: var(--muted);
+        }
+
+        section {
+            background-color: var(--panel);
+            border: 1px solid var(--text) 10%;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            margin: 18px 0;
+        }
+
+        /* mobile first layout */
+
+        .grid {
+            /* 1 column layour by default */
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .card {
+            background-color: var(--card);
+            border: 1px solid var(--ring);
+            border-radius: 12px;
+            padding: 16px;
+            min-height: 110px;
+        }
+
+        /* breakpoints after mobile first */
+        /* progressively enhance and widen the layout for wider devices */
+
+        @media (min-width: 480px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            body {
+                line-height: 1.6;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .wrapper {
+                padding: 32px;
+            }
+
+            .hero {
+                padding: 26px;
+            }
+        }
+
+        /* orientation example */
+
+        .orientation {
+            margin-top: 8px;
+            font: 0.9rem;
+        }
+
+        .only-portrait, .only-landscape {
+            display: none;
+        }
+
+        @media(orientation: portrait) {
+            .only-portrait {
+                display: inline;
+            }
+        }
+
+        @media(orientation: landscape) {
+            .only-landscape {
+                display: inline;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrapper only-portrait">
+            <div class="brand">Media Quereis
+                <div class="tag">Mobile-First</div>
+            </div>
+        </div>
+    </header>
+    <main class="wrapper">
+        <section class="hero">
+            <h1>What Why How?</h1>
+            <p>Media queries let your CSS repsond to the device of the enviornment. The most common use is to change the layouts as the viewport/window gets wider</p>
+            <div class="note">Try resizing the browser window open devtools toggle device toolbar and grid below from 1 -> 2 -> 3 -> 4 coll</div>
+        </section>
+        <!-- 
+        480px -> small phone to larger phones
+        768px -> tablets/small laptops
+        1024px -> laptops/desktops
+        1280px or more -> large desktop/ultra wide monitors
+        -->
+        <section>
+            <h2>Responsive Device Layout</h2>
+            <p>grid below from 1 -> 2 -> 3 -> 4 column @480px, @768px and @1024px</p>
+            <div class="grid">
+                <article class="card" role="listitem">
+                    <h3>XS: under 480px</h3>
+                    <p>single column. prioritize readability and tap targets</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>SM: >= 480px < 768 </h3>
+                    <p>two columns. cards can sit side-by-side comfortably</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>MD >= 768 <= 1024px </h3>
+                    <p>three columns. more content per row. increased whitespace or gamespace</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>LG >= 1024px < 1280px </h3>
+                    <p>four columns. add more breathing room and option ul</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>orientation</h3>
+                    <p>use portrait or landscape: these do require layout tweaks</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>accessibility</h3>
+                    <p>disable animations, keep color changes to a minimum</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>color schemes</h3>
+                    <p>make your color schemes with light and dark mode in mind</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>tips</h3>
+                    <p>keep breakpoint few and meaningful, design content first, mobile layout first/p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
