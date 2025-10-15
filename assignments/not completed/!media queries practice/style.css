@@ -1,0 +1,356 @@
+header, .heroBand, .about, footer {
+    display: flex;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(239, 225, 225, 0.25);
+    padding: 6vh;
+    width: 1fr;
+    flex-direction: row;
+    place-items: center;
+    margin-top: 3vh;
+}
+
+@media (min-width: 0px) /* meant to be "@media (min-width: 480px)" but whenever i did that it bugs out when the screen size is less than 480px so... */ {
+
+    /* header */
+
+    header > nav {
+        display: flex;
+        align-self: center;
+        justify-content: space-evenly;
+        
+    }
+
+    /* hero */
+
+    .heroBand {
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        justify-content: space-evenly;  
+        gap: 5vh; 
+    }
+
+    .heroBand > img {
+        max-width: 125%; 
+        height: auto;   
+        display: flex;
+        align-self: center;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .heroBand > div {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    .heroBand > div > .divButtons > button {
+        border: 0cap;
+        width: 100%; 
+        height: 7vh;
+        font-size: 3vh; 
+    }
+
+    .heroBand > div > .divButtons > .button1 {
+        background-color: rgba(35, 117, 249);
+        color: black;
+    }
+
+    .heroBand > div > divButtons > .button2 {
+        background-color: rgba(0, 0, 0, 0.25);
+        color: white;
+        border: 0.5vh solid black;
+    }
+
+    /* a */
+    .about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about h1 {
+        display: flex;
+        size: 100%;
+        text-align: center;
+    }
+
+    .about-pTags {
+        display: flex;
+        flex-direction: row;
+        font-size: 90%;
+        gap: 1vh;
+        align-content: space-evenly;
+    }
+
+    footer {
+        display: flex;
+        border: 4px solid #1f2337;
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+        flex-direction: row;
+        justify-content: space-between;
+        flex-shrink: 0;
+    }
+
+    .footerDivs {
+        display: flex;
+        flex-direction: row;
+        gap: 3vh;
+        align-content: space-evenly;
+    }
+
+    .footerDivs > div {
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+
+    .footerDivs > div > h4,h5 {
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 700px) {
+
+    /* header */
+
+    header > nav {
+        display: flex;
+        align-self: center;
+        justify-content: space-evenly;
+    }
+
+    /* hero */
+
+    .heroBand {
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        justify-content: space-evenly;  
+        gap: 5vh; 
+    }
+
+    .heroBand > img {
+        max-width: 125%; /* Ensures the image never exceeds its parent's width */
+        height: auto;    /* Maintains the aspect ratio of the image */
+        display: flex;
+        align-self: center;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+
+    .heroBand > div {
+        align-content: space-evenly;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 3vh;
+    }
+
+    .heroBand > div > .divButtons {
+        width: 100%; 
+    }
+
+    .heroBand > div > .divButtons > button {
+        border: 0cap;
+        width: 100%; 
+        height: 7vh;
+        font-size: 3vh;
+    }
+
+    .heroBand > div > .divButtons > .button1 {
+        background-color: rgba(35, 117, 249);
+        color: black;
+    }
+
+    .heroBand > div > divButtons > .button2 {
+        background-color: rgba(0, 0, 0, 0.25);
+        color: white;
+        border: 0.5vh solid black;
+    }
+
+    /* a */
+    .about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about h1 {
+        display: flex;
+        size: 100%;
+        text-align: center;
+    }
+
+    .about-pTags {
+        display: flex;
+        font-size: 100%;
+        gap: 1vh;
+        align-content: space-evenly;
+    }
+
+    footer {
+        display: flex;
+        border: 4px solid #1f2337;
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+        flex-direction: row;
+        justify-content: space-between;
+        flex-shrink: 0;
+    }
+
+    .footerDivs {
+        display: flex;
+        flex-direction: row;
+        gap: 9vh;
+        align-content: space-evenly;
+    }
+
+    .footerDivs > div {
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+
+    .footerDivs > div > h4,h5 {
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1000px) {
+    /* header */
+
+    header > nav {
+        display: flex;
+        align-self: center;
+        justify-content: space-evenly;
+    }
+
+    /* hero */
+
+    .heroBand {
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+        justify-content: space-evenly;  
+        gap: 5vh; 
+    }
+
+    .heroBand > img {
+        max-width: 125%; /* Ensures the image never exceeds its parent's width */
+        height: auto;    /* Maintains the aspect ratio of the image */
+        display: flex;
+        align-self: center;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+
+    .heroBand > div {
+        align-content: space-evenly;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 3vh;
+    }
+
+    .heroBand > div > .divButtons {
+        width: 100%; 
+    }
+
+    .heroBand > div > .divButtons > button {
+        border: 0cap;
+        width: 100%; 
+        height: 7vh;
+        font-size: 3vh;
+    }
+
+    .heroBand > div > .divButtons > .button1 {
+        background-color: rgba(35, 117, 249);
+        color: black;
+    }
+
+    .heroBand > div > divButtons > .button2 {
+        background-color: rgba(0, 0, 0, 0.25);
+        color: white;
+        border: 0.5vh solid black;
+    }
+
+    /* a */
+    .about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about h1 {
+        display: flex;
+        size: 100%;
+        text-align: center;
+    }
+
+    .about-pTags {
+        display: flex;
+        font-size: 100%;
+        gap: 1vh;
+        align-content: space-evenly;
+    }
+
+    footer {
+        border: 4px solid #1f2337;
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+        flex-direction: row;
+        justify-content: space-between;
+        flex-shrink: 0;
+    }
+
+    .footerDivs {
+        margin: 1vh auto;
+        display: flex;
+        flex-direction: row;
+        gap
+        justify-content: ;
+    }
+
+    .footerDivs > div {
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+
+    .footerDivs > div > h4,h5 {
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+}
+
