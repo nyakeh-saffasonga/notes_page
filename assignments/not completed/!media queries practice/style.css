@@ -1,4 +1,18 @@
-header, .heroBand, .about, footer {
+@font-face {
+    font-family: OCR A Extended;
+    src: url(./OCRAEXT.TTF);
+}
+
+* {
+    font-family: OCR A Extended;
+}
+
+body {
+    background: linear-gradient(320deg, #510599, #37065f);
+    font-family: 'Roboto', sans-serif;
+}
+
+header, .heroBand, .about, .gallery, footer {
     display: flex;
     border: 4px solid #1f2337;
     border-radius: 14px;
@@ -10,17 +24,143 @@ header, .heroBand, .about, footer {
     margin-top: 3vh;
 }
 
+header > nav {
+    display: flex;
+    align-self: center;
+    justify-content: space-evenly; 
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* keeps h1 left, nav right */
+    align-items: center;
+    width: 100%;
+    padding: 6vh;
+    margin-top: 3vh;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(239, 225, 225, 0.25);
+    box-sizing: border-box; /* ensures padding doesn't expand width */
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav {
+    margin-left: auto; /* pushes nav to the right */
+}
+
+header nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav li {
+    white-space: nowrap; /* prevents items from wrapping oddly */
+}
+
+.heroBand > img {
+    max-width: 125%; 
+    height: auto;    
+    display: flex;
+    align-self: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer {
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+}
+
+.footerDivs {
+    margin: 1vh auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    width: 100%;
+}
+
+.footerDivs > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+    text-align: center;
+}
+
+.footerDivs > div > h4,h5 {
+    font-size: 150%;
+    margin: 0;
+}
+
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+header nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+.heroBand > div > .divButtons > .button1 {
+    background-color: rgb(188, 35, 249);
+    color: black;
+}
+
+.heroBand > div > .divButtons > .button2 {
+    background-color: rgba(0, 0, 0, 1);
+
+}
+
+.heroBand > div > .divButtons > .button2 > a {
+    color: white;
+
+}
+
+a {
+  text-decoration-line: none;
+  color: black;
+  transition: color 0.3s, transform 0.3s;
+}
+
+a:hover {
+  transform: scale(1.05);
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
 @media (min-width: 0px) /* meant to be "@media (min-width: 480px)" but whenever i did that it bugs out when the screen size is less than 480px so... */ {
-
+    
     /* header */
-
-    header > nav {
-        display: flex;
-        align-self: center;
-        justify-content: space-evenly;
-        
+    
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
     /* hero */
 
     .heroBand {
@@ -29,15 +169,6 @@ header, .heroBand, .about, footer {
         flex-direction: column;
         justify-content: space-evenly;  
         gap: 5vh; 
-    }
-
-    .heroBand > img {
-        max-width: 125%; 
-        height: auto;   
-        display: flex;
-        align-self: center;
-        justify-content: space-evenly;
-        align-items: center;
     }
 
     .heroBand > div {
@@ -51,17 +182,6 @@ header, .heroBand, .about, footer {
         width: 100%; 
         height: 7vh;
         font-size: 3vh; 
-    }
-
-    .heroBand > div > .divButtons > .button1 {
-        background-color: rgba(35, 117, 249);
-        color: black;
-    }
-
-    .heroBand > div > divButtons > .button2 {
-        background-color: rgba(0, 0, 0, 0.25);
-        color: white;
-        border: 0.5vh solid black;
     }
 
     /* a */
@@ -78,41 +198,23 @@ header, .heroBand, .about, footer {
 
     .about-pTags {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         font-size: 90%;
         gap: 1vh;
         align-content: space-evenly;
     }
 
-    footer {
-        display: flex;
-        border: 4px solid #1f2337;
-        border-radius: 14px;
-        padding: 18px;
-        box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
-        flex-direction: row;
-        justify-content: space-between;
-        flex-shrink: 0;
-    }
-
-    .footerDivs {
-        display: flex;
-        flex-direction: row;
-        gap: 3vh;
-        align-content: space-evenly;
-    }
-
-    .footerDivs > div {
+    .gallery {
         display: flex;
         flex-direction: column;
-        
-        
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1vh;
     }
 
-    .footerDivs > div > h4,h5 {
-        margin-bottom: 10%;
-        margin-top: 10%;
-    }
+
+
 }
 
 
@@ -129,12 +231,23 @@ header, .heroBand, .about, footer {
 
     /* header */
 
-    header > nav {
-        display: flex;
-        align-self: center;
-        justify-content: space-evenly;
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
+    header nav {
+        margin-left: 0; /* reset auto margin so nav centers */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    
     /* hero */
 
     .heroBand {
@@ -143,15 +256,6 @@ header, .heroBand, .about, footer {
         flex-direction: column;
         justify-content: space-evenly;  
         gap: 5vh; 
-    }
-
-    .heroBand > img {
-        max-width: 125%; /* Ensures the image never exceeds its parent's width */
-        height: auto;    /* Maintains the aspect ratio of the image */
-        display: flex;
-        align-self: center;
-        justify-content: space-evenly;
-        align-items: center;
     }
 
 
@@ -163,10 +267,6 @@ header, .heroBand, .about, footer {
         gap: 3vh;
     }
 
-    .heroBand > div > .divButtons {
-        width: 100%; 
-    }
-
     .heroBand > div > .divButtons > button {
         border: 0cap;
         width: 100%; 
@@ -174,16 +274,6 @@ header, .heroBand, .about, footer {
         font-size: 3vh;
     }
 
-    .heroBand > div > .divButtons > .button1 {
-        background-color: rgba(35, 117, 249);
-        color: black;
-    }
-
-    .heroBand > div > divButtons > .button2 {
-        background-color: rgba(0, 0, 0, 0.25);
-        color: white;
-        border: 0.5vh solid black;
-    }
 
     /* a */
     .about {
@@ -198,40 +288,23 @@ header, .heroBand, .about, footer {
     }
 
     .about-pTags {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 2vh;
         font-size: 100%;
-        gap: 1vh;
-        align-content: space-evenly;
     }
 
-    footer {
-        display: flex;
-        border: 4px solid #1f2337;
-        border-radius: 14px;
-        padding: 18px;
-        box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
-        flex-direction: row;
-        justify-content: space-between;
-        flex-shrink: 0;
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+        grid-template-rows: repeat(3, 1fr);    /* 3 equal rows */
+        gap: 1rem; /* adds spacing between images */
     }
 
-    .footerDivs {
-        display: flex;
-        flex-direction: row;
-        gap: 9vh;
-        align-content: space-evenly;
-    }
-
-    .footerDivs > div {
-        display: flex;
-        flex-direction: column;
-        
-        
-    }
-
-    .footerDivs > div > h4,h5 {
-        margin-bottom: 10%;
-        margin-top: 10%;
+    .gallery img {
+        width: 50%;
+        height: auto;
+    
     }
 }
 
@@ -242,18 +315,20 @@ header, .heroBand, .about, footer {
 
 
 
-
-
-
 @media (min-width: 1000px) {
+
     /* header */
 
-    header > nav {
-        display: flex;
-        align-self: center;
-        justify-content: space-evenly;
+    header {
+        flex-direction: row;
     }
 
+    header {
+        justify-content: space-between;
+        padding: 4vh 8vh;
+    }
+
+    
     /* hero */
 
     .heroBand {
@@ -262,15 +337,6 @@ header, .heroBand, .about, footer {
         flex-direction: row;
         justify-content: space-evenly;  
         gap: 5vh; 
-    }
-
-    .heroBand > img {
-        max-width: 125%; /* Ensures the image never exceeds its parent's width */
-        height: auto;    /* Maintains the aspect ratio of the image */
-        display: flex;
-        align-self: center;
-        justify-content: space-evenly;
-        align-items: center;
     }
 
 
@@ -282,26 +348,11 @@ header, .heroBand, .about, footer {
         gap: 3vh;
     }
 
-    .heroBand > div > .divButtons {
-        width: 100%; 
-    }
-
     .heroBand > div > .divButtons > button {
         border: 0cap;
         width: 100%; 
         height: 7vh;
         font-size: 3vh;
-    }
-
-    .heroBand > div > .divButtons > .button1 {
-        background-color: rgba(35, 117, 249);
-        color: black;
-    }
-
-    .heroBand > div > divButtons > .button2 {
-        background-color: rgba(0, 0, 0, 0.25);
-        color: white;
-        border: 0.5vh solid black;
     }
 
     /* a */
@@ -318,39 +369,24 @@ header, .heroBand, .about, footer {
 
     .about-pTags {
         display: flex;
+        flex-direction: row;
         font-size: 100%;
         gap: 1vh;
         align-content: space-evenly;
     }
 
-    footer {
-        border: 4px solid #1f2337;
-        border-radius: 14px;
-        padding: 18px;
-        box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
-        flex-direction: row;
-        justify-content: space-between;
-        flex-shrink: 0;
-    }
-
-    .footerDivs {
-        margin: 1vh auto;
+    .gallery {
         display: flex;
         flex-direction: row;
-        gap
-        justify-content: ;
+        align-items: center;
+    }   
+    
+    .gallery img {
+        width: 5%;
+        height: auto;
+        margin-left: 0.5vh;
+        margin-right: 0.5vh;
     }
 
-    .footerDivs > div {
-        display: flex;
-        flex-direction: column;
-        
-        
-    }
-
-    .footerDivs > div > h4,h5 {
-        margin-bottom: 10%;
-        margin-top: 10%;
-    }
 }
 
