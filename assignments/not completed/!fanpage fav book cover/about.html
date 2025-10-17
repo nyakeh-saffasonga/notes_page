@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
     <nav>
         <section class="navTitle">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLo6bqzY16xXjZGvjxNanrXv9nd5T5EpXAIw&s" width="50px" height="50px">
-                <br>
+                <img src="https://upload.wikimedia.org/wikipedia/en/0/02/Percy_Jackson.png" alt="Website Logo" width="50px" height="50px" />
+                <br />
                 <h1>Percy Jackson Series Fanpage</h1>
             </section>
         <section class="headerButtons">
@@ -23,24 +23,32 @@
     </nav>
 
     <main class="about">
-        <div class="aboutCards">
-            <div>
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero earum nesciunt nobis praesentium, consequatur rem sequi eaque deleniti quo repudiandae ipsa similique. Deserunt, ratione possimus.</p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <p>Corporis sequi quod odio illo sed laboriosam dolorem quo? Et optio autem tempore aperiam dolore suscipit impedit, magni harum ad accusantium commodi ducimus non placeat?</p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <p>Officia deleniti ullam, maiores numquam autem provident cupiditate excepturi, ex atque, at doloremque repellendus pariatur eligendi? Doloremque aliquid beatae eligendi eveniet officiis, eius nesciunt totam.</p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <p>Rerum in pariatur hic neque sed, quod ipsum. Consectetur dolorum eaque accusamus a qui fugiat doloremque illo. Totam, minus. Laudantium corrupti voluptatibus placeat nobis a?</p>
-            </div>
+        <div class="aboutSection">
+            <h1> About Us </h1>
+            <h2>Why I Chose the Percy Jackson Series</h2>
+            <p>I chose the Percy Jackson series because of its engaging storytelling, rich mythology, and inspiring characters. It beautifully combines adventure and humor, making Greek mythology accessible and exciting for readers of all ages.</p>
+            <h2>Official Resources</h2>
+                <a href="https://www.percyjacksonbooks.com/" target="_blank" rel="noopener noreferrer">Official Percy Jackson Website</a></li>
+                <a href="https://riordan.fandom.com/wiki/Percy_Jackson" target="_blank" rel="noopener noreferrer">Fans of Percy (Fan Community)</a></li>
+                <a href="https://www.rickriordan.com/" target="_blank" rel="noopener noreferrer">Rick Riordan's Official Author Site</a></li>
+            </ul>
+            <br>
         </div>
+        <section class="contactForm">
+            <h2>Contact Us</h2>
+            <form action="#" method="post" class="contact-form">
+                <section class="theFirstThree">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" style="height: 10vh; color:black;" required><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" style="height: 10vh; color:black;"  required><br><br>
+                    <label for="textarea">Message:</label><br>
+                    <textarea id="textarea" name="textarea" style="height: 10vh; color:black; text-align: center;" required></textarea><br><br>
+                </section>
+                <button class="submitButton" type="submit">Send</button>
+            </form>
+            <br>
+        </section>
     </main>
 
     <footer>
@@ -52,7 +60,5 @@
                 <button class="button5"><a href="./about.html">About</a></button>
         </section>
     </footer>
-
-
 </body>
 </html>
