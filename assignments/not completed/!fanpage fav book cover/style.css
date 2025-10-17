@@ -101,7 +101,9 @@ nav > .headerButtons {
     margin: 0.5vh;
 }
 
-.bookCards, .characterCards {
+/* book + character sections */
+
+.bookCards, .characterCards, .loreCards {
     display: flex;
     flex-direction: column;
     gap: 4vh;
@@ -141,6 +143,21 @@ nav > .headerButtons {
     gap: 3vw;
 }
 
+.loreCards > div {
+    display: flex;
+    flex-direction: row;
+    border: 4px solid #1f2337;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    gap: 3vw;
+}
+
 .bookCard-leftAlign img {
     display: block;
     margin: 0 auto;
@@ -148,8 +165,7 @@ nav > .headerButtons {
     width: auto;
 }
 
-.bookCard-leftAlign,
-.bookCard-rightAlign {
+.bookCard-leftAlign, .bookCard-rightAlign {
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -196,6 +212,8 @@ button {
     border: 0.5vh solid black;
     padding: 1vh 2vh;
 }
+
+/* footer */
 
 footer {
     width: 100%;
@@ -311,12 +329,13 @@ footer > .navButtons {
   .characterCards > div {
     flex-direction: column;
     text-align: center;
+
   }
 
   .characterCards {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }
@@ -366,8 +385,8 @@ footer > .navButtons {
 
   .characterCards {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
 }
