@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "notes_page",
+			"path": "."
+		},
+		{
+			"path": "G:/My Drive/pc_store_website"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "notes_page"
+	}
+}

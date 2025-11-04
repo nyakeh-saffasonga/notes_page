@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --bg:#0b2545; --fg:#fff; --fg-muted:#dce7f7; --accent:#f59e0b;
+        }
+
+        ::before,*::after { 
+            box-sizing:border-box; 
+        }
+
+        body { 
+            margin:0; 
+            font:16px/1.4 system-ui,Segoe UI,Roboto,Arial,sans-serif; 
+            background:#0f172a; 
+            color:var(--fg); 
+        }
+
+        nav { 
+            position:sticky;
+            top:0; 
+            z-index:10;
+            background:var(--bg); 
+            border-bottom:1px solid rgba(255,255,255,.08); 
+        }
+
+        .wrap { 
+            max-width:960px;
+            margin:0 auto; 
+            padding:.75rem 1rem; 
+            display:flex; 
+            align-items:center;
+            justify-content:space-between; 
+            gap:1rem; 
+        }
+
+        .brand { 
+            display:flex; 
+            align-items:center; 
+            gap:.5rem; 
+            color:var(--fg); 
+            text-decoration:none; 
+            font-weight:700; 
+        }
+
+        .brand__logo { 
+            width:28px; 
+            height:28px; 
+            border-radius:6px; 
+            background:var(--accent); 
+        }
+
+        .basic {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0;
+            color: #f59e0b;
+            background-color: #0b2545;
+        }
+
+        /* Accessibility Class */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            white-space: nowrap;
+            border: 0;
+            clip-path: rect(0, 0, 0, 0);
+        }
+
+        /* Hamburger CSS */
+        details {
+            position: relative;
+
+        }
+
+        summary, menu {
+            list-style: none;
+            cursor: crosshair;
+            display: none;
+        }
+
+        /* Actual Icon */
+
+        .hamburger, .hamburger::before, .hamburger::after {
+            display: block;
+            background-color: var(--fg);
+            height: 3px;
+            width: 26px;
+            border-radius: 2px;
+            position: relative;
+            transition: all 0.3 ease;
+        }
+
+        .hamburger::before, .hamburger::after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        .hamburger::before {
+            top: -8px;
+        }
+        .hamburger::after {
+            top: 8px;
+        }
+
+        /* hiding the checkbox style */
+        .summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .link {
+            color: var(--fg);
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .link:hover {
+            color: var(--accent);
+        }
+
+        /* Media Queries */
+
+        @media (max-width:700px) {
+            summary {
+                display: block;
+            }
+            .menu {
+                flex-direction: column;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                background: var(--bg);
+                border-top: 1px solid rgba(255,255,255,.01);
+                width: 200px;
+                display: none;
+                padding: 0.5rem 0;
+            }
+
+            .menu li {
+                margin-left: 1rem;
+            }
+
+            details[open] .menu {
+                display: flex;
+            }
+
+            details[open] .hamburger {
+                background-color: transparent;
+            }
+
+            details[open] .hamburger::after {
+                transform: rotate(-45deg);
+                top: 0;
+            }
+
+            detaila[open] .hamburger::before {
+                transform: rotate(45deg);
+                top: 0;
+            }
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="wrap" aria-label="Primary">
+            <a class="brand" href="/">
+                <span class="brand_logo" aria-hidden="true"></span>
+                <span>Buisness Website</span>
+            </a>
+        
+    <!-- Toggle to open and close hamburger menu -->
+    <details>
+        <span class="sr-only" aria-hidden="true"></span>
+        <summary aria-label="Toggle Menu">
+            <span class="hamburger"></span>
+        </summary>
+    
+        <ul class="menu">
+            <li><a href="/" class="link">Home</a></li>
+            <li><a href="/about" class="link">About</a></li>
+            <li><a href="/services" class="link">Services</a></li>
+            <li><a href="/blog" class="link">Blog</a></li>
+        </ul>
+
+    </details>
+    </div>
+
+    </nav>
+
+    <main class="basic">
+        <h1>Hamburger Demo</h1>
+        <p>Resize to see the hamburger</p>
+    </main>
+
+    <!-- ARIA stands for Accesible Rich Internet Applications. Its a set of special HTML attributes that makes content especially interactive parts like menus, popup windows, sliders. etc. -->
+
+</body>
+</html>
