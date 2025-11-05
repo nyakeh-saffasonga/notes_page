@@ -11,3 +11,22 @@
 // const meal = /* TODO */;
 // const quality = /* TODO */;
 // // TODO: map rate, compute tip, log results
+
+const meal = Number(prompt("enter the meal total"));
+const quality = prompt("enter the service quality (good/average/poor)");
+
+var tip = 0;
+
+if (quality == "good") {
+    tip = meal + (meal * 0.20);
+} else if (quality == "average") {
+    tip = meal + (meal * 0.15);
+} else if (quality == "poor") {
+    tip = meal + (meal * 0.10);
+}
+
+console.log("Tip: " + (tip - meal) + " Grand total: " + tip);
+
+
+
+

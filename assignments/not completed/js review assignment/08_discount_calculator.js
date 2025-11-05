@@ -10,3 +10,16 @@
 //
 // const total = /* TODO */;
 // // TODO: compute discount and log
+
+const total = Number(prompt("enter a purchase total"));
+
+var discount = 0;
+
+if (total > 100) {
+    discount = 0.80; // 1 - 0.2
+} else if (total >= 50 && total <= 100) {
+    discount = 0.90; // 1 - 0.1
+}
+
+console.log("original total: " + total + " || discounted total : " + (total*discount));
+

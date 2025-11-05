@@ -12,3 +12,21 @@
 // const heightM = /* TODO */;
 // const weightKg = /* TODO */;
 // // TODO: compute BMI, classify, and log
+
+const heightM = Number(prompt("give me your height in meters"));
+const weightKg = Number(prompt("give me your weight in kilograms"));
+
+var bmi = Math.round((weightKg / (heightM ** 2)) * 100) / 100;
+
+if (bmi < 18.5) {
+    console.log("Your BMI is " + bmi + " Your wieight class is Underweight");
+} else if (bmi >= 18.5 && bmi <= 24.9) {
+    console.log("Your BMI is " + bmi + " Your wieight class is Normal");
+} else if (bmi >= 25 && bmi <= 29.9) {
+    console.log("Your BMI is " + bmi + " Your wieight class is Overweight");
+} (bmi >= 30) {
+    console.log("Your BMI is " + bmi + " Your wieight class is Obese");
+}
+
+
+

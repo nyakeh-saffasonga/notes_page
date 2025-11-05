@@ -11,3 +11,17 @@
 // // const target = /* TODO: random int 1..10 */;
 // // const guess = /* TODO */;
 // // TODO: compare and log
+
+const target = Math.floor(Math.random() * 10) + 1;
+const guess = Number(prompt("guess a number from 1-10"));
+
+if (guess == target) {
+    console.log("You were on point! The number was " + target + ".");
+} else if (guess > target) {
+    console.log("You went above the number. The number was " + target + ".");
+} else if (guess < target) {
+    console.log("You went below the number. The number was " + target + ".");
+}
+
+
+

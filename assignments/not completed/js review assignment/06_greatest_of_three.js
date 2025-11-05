@@ -12,3 +12,21 @@
 // const b = /* TODO */;
 // const c = /* TODO */;
 // // TODO: find largest and log
+
+const a = Number(prompt("enter the first number"));
+const b = Number(prompt("enter the second number"));
+const c = Number(prompt("enter the third number"));
+
+var largestNumber = a;
+
+if (b > largestNumber) {
+    largestNumber = b;
+}
+
+if (c > largestNumber) {
+    largestNumber = c;
+}
+
+console.log("The largest number out of the 3 is " + largestNumber + ".");
+
+

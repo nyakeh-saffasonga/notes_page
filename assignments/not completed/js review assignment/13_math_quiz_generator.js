@@ -13,3 +13,14 @@
 // // const y = /* TODO */;
 // // const userAnswer = /* TODO */;
 // // TODO: compare and log
+
+const x = Math.floor(Math.random() * 10) + 1;
+const y = Math.floor(Math.random() * 10) + 1;
+const actualAnswer = x + y;
+const userAnswer = Number(prompt("what is " + x + " + " + y + "?"));
+
+if (actualAnswer == userAnswer) {
+    console.log("Correct!");
+} else {
+    console.log("Try again.");
+}

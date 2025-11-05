@@ -13,4 +13,12 @@
 
 const n = Number(prompt("enter a number"));
 
+if (Math.sign(n) == 1) {
+    console.log("The number " + n + " is positive.");
+} else if (Math.sign(n) == -1) {
+    console.log("The number " + n + " is negative.");
+} else {
+    console.log("The number " + n + " is zero.");
+}
+
 

@@ -11,3 +11,27 @@
 //
 // const grade = /* TODO */;
 // // TODO: pass/fail + letter grade
+
+const grade = Number(prompt("enter a grade (in percent)"));
+
+var letterGrade = "none";
+var havePassed = "dont know";
+
+if (grade < 60) {
+    letterGrade = "F";
+    havePassed = "Fail";
+} else if (grade >= 60) {
+    letterGrade = "D";
+    havePassed = "Fail";
+} else if (grade >= 70) {
+    letterGrade = "C";
+    havePassed = "Pass";
+} else if (grade >= 80) {
+    letterGrade = "B";
+    havePassed = "Pass";
+} else if (grade >= 90) {
+    letterGrade = "A";
+    havePassed = "Pass";
+}
+
+console.log("STATUS: " + havePassed + " || Letter Grade: " +  letterGrade);
