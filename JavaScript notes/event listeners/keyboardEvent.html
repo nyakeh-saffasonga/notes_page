@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chunk 3: Keyboard Events</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+        #keyDisplay {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+        #player {
+            width: 50px;
+            height: 50px;
+            background-color: magenta;
+            position: relative;
+            margin: 2rem auto 0;
+            transition: transform 0.1s linear;
+        }
+    </style>a
+</head>
+<body>
+    <h1>Chunk 3: Keyboard Events</h1>
+    <p>Press W/A/S/D and the arrow keys</p>
+    <p id="keyDisplay">Press a key...</p>
+    <div id="player"></div>
+
+    <script>
+        const keyDisplay = document.getElementById('keyDisplay');
+        const player = document.getElementById('player');
+
+        let x = 0;
+        let y = 0;
+        const step = 15;
+        wasd = ["w", "a", "s", "d", "W", "A", "S", "D"];
+
+        document.addEventListener('keydown', (e)=> {
+
+            if(wasd.includes(e.key)) {
+                keyDisplay.textContent = `${e.key.toUpperCase()} pressed`;
+
+                player.style.position = 'absolute';
+            
+                if (e.key.toUpperCase() == 'W') {
+                    y -= step;
+                } else if (e.key.toUpperCase() == 'A') {
+                    x -= step;
+                } else if (e.key.toUpperCase() == 'S') {
+                    y += step;
+                } else if (e.key.toUpperCase() == 'D') {
+                    x += step;
+                }
+
+                player.style.transform = `translate(${x}px, ${y}px)`
+            }
+
+        })
+    </script>
+</body>
+</html>

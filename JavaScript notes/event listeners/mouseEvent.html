@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Tracker</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #output {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        #circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: orange;
+            position: absolute;
+            opacity: 0.8;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Chunk 2: Mouse Position Tracking</h1>
+    <p id="output">Move your mouse to start...</p>
+    <div id="circle"></div>
+
+    <script>
+        const output = document.getElementById('output');
+        const circle = document.getElementById('circle');
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+
+            // show the coordinates for the mouse\
+
+            output.textContent = `X: ${x} | Y: ${y}`
+
+            circle.style.position = 'absolute';
+            circle.style.top = y + "px";
+            circle.style.left = x + "px";
+            // the anchor is at the top left
+
+        });
+
+    </script>
+</body>
+</html>

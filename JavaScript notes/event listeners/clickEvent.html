@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chunk 1: CLick Events</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            transition: background 0.3s ease;
+        }
+        #colorBtn {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click Events Code-Along</h1>
+    <p>Goal: Add an event listener to change the background color</p>
+    <button id="colorBtn">Change Color</button>
+    <p id="result">Waiting...</p>
+    <script>
+        const btn = document.getElementById('colorBtn');
+        const result = document.getElementById('result');
+
+        colorBtn.addEventListener('click', (e) => {
+            // change the text
+            result.textContent = "You clicked the button!!!";
+
+            // change the CSS
+            document.body.style.backgroundColor = `#${(Math.floor(Math.random() * 999999))}`;
+        })
+    </script>
+    
+</body>
+</html>
