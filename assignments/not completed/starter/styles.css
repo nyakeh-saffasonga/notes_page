@@ -1,0 +1,60 @@
+/* Day 1 starter — something is overriding the border. Find it. */
+:root{
+  --bg: #0b1220;
+  --fg: #e8eefc;
+  --muted:#a9b5d1;
+  --accent:#6ee7b7;
+  --danger:#fb7185;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+.wrap{
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 16px;
+}
+.top{ padding: 10px 0 18px; }
+.sub{ color: var(--muted); margin-top: 4px; }
+
+.card{
+  background: rgba(255,255,255,0.04);
+  border: 2px solid rgba(110,231,183,0.35);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 14px 0;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+/* BUG: this rule shouldn't exist for .card */
+div{
+  border: none;
+}
+
+button{
+  background: var(--accent);
+  border: none;
+  color: #062018;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:active{ transform: translateY(1px); }
+
+.hint{ color: var(--muted); }
+.tiny{ color: var(--muted); font-size: 0.9rem; }
+
+.hero{
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  margin-top: 6px;
+}
+
+.foot{ color: var(--muted); margin-top: 18px; }
