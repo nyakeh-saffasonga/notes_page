@@ -11,13 +11,13 @@ let isOnline = false;
 
 function render(){
   // BUG: wrong operator used
-  statusEl.textContent == (isOnline ? "online" : "offline");
+  statusEl.textContent = (isOnline ? "online" : "offline");
   statusEl.style.color = isOnline ? "var(--accent)" : "var(--danger)";
 }
 
 // BUG: wrong event name
 toggleBtn.addEventListener("click", () => {
-  isOnline = !isOnline; 
+  isOnline = !isOnline;
   render();
 });
 

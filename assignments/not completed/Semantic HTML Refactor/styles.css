@@ -1,0 +1,12 @@
+*{box-sizing:border-box} body{font-family:system-ui,Segoe UI,Arial;margin:0;padding:0}
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:#0b1220;color:#e8eefc}
+.logo{font-weight:800}
+.links a{color:#e8eefc;margin-left:10px;text-decoration:none}
+.container{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;padding:18px}
+.left,.right{padding:14px;border:2px solid #dbeafe;border-radius:14px}
+.title{font-size:1.2rem;font-weight:800;margin-bottom:8px}
+.imgWrap img{width:100%;border-radius:12px}
+.bottom{padding:14px 18px;background:#111827;color:#93c5fd}
+input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #94a3b8;margin-top:8px}
+button{margin-top:10px;padding:10px 12px;border-radius:10px;border:none;background:#6ee7b7;font-weight:800;cursor:pointer}
+@media (max-width:800px){.container{grid-template-columns:1fr}}

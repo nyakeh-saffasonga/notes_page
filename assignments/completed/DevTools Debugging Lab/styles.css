@@ -22,6 +22,11 @@ body{
 .top{ padding: 10px 0 18px; }
 .sub{ color: var(--muted); margin-top: 4px; }
 
+/* BUG: this rule shouldn't exist for .card */
+div{
+  border: none;
+}
+
 .card{
   background: rgba(255,255,255,0.04);
   border: 2px solid rgba(110,231,183,0.35);
@@ -31,10 +36,6 @@ body{
   box-shadow: 0 10px 24px rgba(0,0,0,0.25);
 }
 
-/* BUG: this rule shouldn't exist for .card */
-div{
-  border: none;
-}
 
 button{
   background: var(--accent);
