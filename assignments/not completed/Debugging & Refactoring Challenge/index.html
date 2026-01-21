@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Day 6 — Debug + Refactor</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Task List (Broken Starter)</h1>
+    <p class="muted">Debug this app until it works correctly.</p>
+
+    <div class="panel">
+      <label for="task">Task</label>
+      <input id="task" type="text" placeholder="e.g., Finish HTML refactor" />
+      <button id="addBtn">Add Task</button>
+      <p id="msg" class="msg" aria-live="polite"></p>
+
+      <div class="row">
+        <p>Total: <strong id="count">0</strong></p>
+      </div>
+
+      <ul id="list" class="list"></ul>
+    </div>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>

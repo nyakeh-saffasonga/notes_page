@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Project Option C — Logic Game (Starter)</title>
+  <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body>
+  <main class="wrap">
+    <header class="row" style="justify-content:space-between;">
+      <div>
+        <h1 style="margin:0;">Number Guess</h1>
+        <p class="muted" style="margin:6px 0 0;">Use loops + conditionals + validation to build a game.</p>
+      </div>
+      <span class="pill">Option C</span>
+    </header>
+
+    <section class="card" style="margin-top:18px;">
+      <p class="muted">Guess the secret number (1–100). You have limited attempts.</p>
+
+      <div class="grid">
+        <div>
+          <label for="guess">Your guess</label>
+          <input id="guess" type="number" min="1" max="100" placeholder="e.g., 50"/>
+        </div>
+        <div>
+          <label for="attempts">Attempts (3–10)</label>
+          <input id="attempts" type="number" min="3" max="10" value="5"/>
+        </div>
+      </div>
+
+      <button class="btn" id="startBtn">Start / Restart</button>
+      <button class="btn secondary" id="guessBtn">Submit Guess</button>
+
+      <p id="msg" class="msg" aria-live="polite"></p>
+      <ul id="history"></ul>
+
+      <p class="muted"><strong>TODO:</strong> track attempts remaining, show hints, and end game correctly.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

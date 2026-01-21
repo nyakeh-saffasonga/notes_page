@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Day 5 — Flow Control Lab</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Score Analyzer</h1>
+    <p class="muted">Enter a score (0–100) to get feedback + a mini report.</p>
+
+    <div class="panel">
+      <label for="score">Score</label>
+      <input id="score" type="number" min="0" max="100" placeholder="e.g., 87"/>
+
+      <button id="runBtn">Analyze</button>
+
+      <section class="out" aria-live="polite">
+        <h2>Results</h2>
+        <p id="category">Category: —</p>
+        <ul id="report"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

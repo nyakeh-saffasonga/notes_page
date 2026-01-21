@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Project Option B — Quiz Engine (Starter)</title>
+  <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body>
+  <main class="wrap">
+    <header class="row" style="justify-content:space-between;">
+      <div>
+        <h1 style="margin:0;">Quiz Engine</h1>
+        <p class="muted" style="margin:6px 0 0;">Build a multi-question quiz with scoring + review.</p>
+      </div>
+      <span class="pill">Option B</span>
+    </header>
+
+    <section class="card" style="margin-top:18px;">
+      <div class="row" style="justify-content:space-between;">
+        <div>
+          <div class="pill" id="progressPill">Question 1 / 1</div>
+          <h2 id="qText" style="margin:10px 0 0;">—</h2>
+        </div>
+        <div>
+          <div class="pill">Score: <span id="score">0</span></div>
+        </div>
+      </div>
+
+      <div id="choices" style="margin-top:12px;"></div>
+
+      <p id="msg" class="msg" aria-live="polite"></p>
+
+      <div class="row" style="margin-top:10px;">
+        <button class="btn secondary" id="restartBtn">Restart</button>
+      </div>
+
+      <hr/>
+      <h3>Review</h3>
+      <ol id="review"></ol>
+
+      <p class="muted"><strong>TODO:</strong> implement question bank, selection, scoring, and a review screen.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

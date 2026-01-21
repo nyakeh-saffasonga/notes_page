@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Day 4 — JS Data Conversions</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Data Conversion Tool</h1>
+    <p class="muted">Convert between decimal, binary, and hexadecimal.</p>
+
+    <div class="panel">
+      <label for="dec">Decimal (base-10)</label>
+      <input id="dec" type="number" placeholder="e.g., 42" />
+
+      <button id="convertBtn">Convert</button>
+
+      <div class="out">
+        <p>Binary: <strong id="binOut">—</strong></p>
+        <p>Hex: <strong id="hexOut">—</strong></p>
+        <p>Bits → Bytes: <strong id="bytesOut">—</strong></p>
+      </div>
+
+      <hr />
+
+      <label for="bin">Binary (base-2)</label>
+      <input id="bin" type="text" placeholder="e.g., 101010" />
+      <button id="fromBinBtn">Convert Binary → Decimal</button>
+      <p>Decimal: <strong id="decOut">—</strong></p>
+
+      <p class="tiny">Rules: use non-negative whole numbers.</p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
