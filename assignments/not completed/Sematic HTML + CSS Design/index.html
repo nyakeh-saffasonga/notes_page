@@ -1,0 +1,73 @@
+<!--
+I chose this structure because it makes the webpage easy to read and understand.
+The most important semantic tag is <main> because it contains most things that my page has.
+My CSS system uses variables so I can easily change colors and sizes later, making the page easier to maintain.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>Website</h1>
+    </div>
+    <nav class="header-right">
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="about" class="about-section">
+      <h2 class="about-title">About Our Website</h2>
+      <p>We provide the best services for our community. Our goal is to help you succeed!</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxXNKNQCecAhwzY-urSTKOkHuyuui0hrSZcA&s" alt="Our team working together">
+    </section>
+
+
+
+    <section class="images">
+        <img src="https://p0.piqsels.com/preview/140/1018/500/man-suit-and-tie-gentleman-business-man.jpg" alt="Team Member 1">
+        <img src="https://www.staffuniforms.co.uk/cdn/shop/files/Novara_Jacket_-_Charcoal_-_Large_0ae00d4d-8e7c-4f58-8bcf-bd0e37e8b290.jpg?crop=region&crop_height=1050&crop_left=28&crop_top=0&crop_width=703&v=1737291943&width=760" alt="Team Member 2"> 
+        <img src="https://image.menswearhouse.com/is/image/TMW/TMW_3YY0_01_JOSEPH_ABBOUD_SUIT_JACKETS_NAVY_SOLID_MAIN" alt="Team Member 3">
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <p>Consulting</p>
+        <p>Support</p>
+        <p>Training</p>
+      </ul>
+    </section>
+
+    <br>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <article>
+        <h3>Get in Touch</h3>
+        <p>If you want to learn more, call us or send an email.</p>
+        <a href="#">info@mysmallbusiness.com</a>
+        <p>Or visit us:</p>
+        <address>
+          123 Business Rd.
+          <br>
+          Business City, BC 12345
+        </address>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p> 2024 Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

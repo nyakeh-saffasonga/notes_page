@@ -1,0 +1,143 @@
+
+:root {
+    --color-primary: #005a87;
+    --color-background: #f4f4f4;
+    --color-text: #333;
+    --spacing: 16px;
+    --font-size-heading: 2rem;
+    --font-size-body: 1rem;
+}
+
+.container {
+    padding: var(--spacing);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: white;
+    padding: calc(2 * var(--spacing));
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--spacing);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+main {
+    padding: calc(2 * var(--spacing));
+}
+
+/* about section: centered text and title */
+.about-section {
+    text-align: center;
+    padding: calc(2 * var(--spacing));
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.about-title {
+    margin-top: 0;
+    margin-bottom: var(--spacing);
+    font-size: var(--font-size-heading);
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--spacing);
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+
+/* other sections */
+section {
+    margin-bottom: calc(2 * var(--spacing));
+}
+
+#services {
+    background-color: #fff;
+    padding: var(--spacing);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#services p {
+    text-align: center;
+}
+
+h2 {
+    font-size: var(--font-size-heading);
+    margin-bottom: var(--spacing);
+    text-align: center;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+section {
+    margin-bottom: var(--spacing);
+}
+
+h2 {
+    font-size: var(--font-size-heading);
+    margin-bottom: var(--spacing);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+#contact {
+    text-align: center;
+    margin-bottom: var(--spacing);
+    background-color: #fff;
+    padding: var(--spacing);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: black;
+    color: white; 
+    text-align: center;
+    padding: var(--spacing);
+}
+
+img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 8px;
+}
