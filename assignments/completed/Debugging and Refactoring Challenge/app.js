@@ -5,6 +5,7 @@ const addBtn = document.getElementById("addBtn");
 const list = document.getElementById("list");
 const msg = document.getElementById("msg");
 const countEl = document.getElementById("count");
+let taskId = 0; // i made a separate id counter to avoid collisions
 
 let tasks = []; // each: { id, text, done }
 
@@ -13,7 +14,7 @@ function setMessage(text){
 }
 
 function renderCount(){
-  // BUG: should show total tasks
+  // the way this was written was wrong (length - 1), so i changed it to be just length
   countEl.textContent = tasks.length;
 }
 
@@ -22,22 +23,27 @@ function makeTaskElement(task){
   li.className = "item";
   if(task.done) li.classList.add("done");
 
-  // BUG: wrong property
-  li.textContent = task.title;
+  // it was task.textContent instead of task.text
+  li.textContent = task.text;
 
   const trash = document.createElement("button");
   trash.className = "trash";
   trash.innerHTML = "🗑";
 
-  // BUG: delete handler removes wrong item
+  // pop only removes the last element, so changed to splice and accounted for index by making a variable
   trash.addEventListener("click", () => {
-    tasks.pop(task.id);
+    let theIndex = tasks.indexOf(task);
+    if (tasks.length >= 0) {
+      tasks.splice(theIndex, 1);
+    } else {
+      tasks.pop();
+    }
     render();
   });
 
   li.appendChild(trash);
 
-  // BUG: event name is wrong
+  // it was "clicked" instead of "click"
   li.addEventListener("click", () => {
     task.done = !task.done;
     render();
@@ -48,7 +54,7 @@ function makeTaskElement(task){
 
 function render(){
   list.innerHTML = "";
-  // BUG: off by one loop
+  // it was tasks.length - 1 instead of just tasks.length, making it off by one
   for(let i = 0; i < tasks.length; i++){
     const el = makeTaskElement(tasks[i]);
     if(el) list.appendChild(el);
@@ -59,17 +65,18 @@ function render(){
 addBtn.addEventListener("click", () => {
   const text = input.value;
 
-  // BUG: doesn't validate empty tasks correctly
-  if(text.length < 0){
+  // the task's length cant be less than 0, changed it to equal 0
+  if(text.length <= 0){
     setMessage("Task cannot be empty.");
     return;
   }
 
-  // BUG: id collisions possible
-  const task = { id: tasks.length, text, done: false };
+  // made a separate variable (taskId) that constantly counts up to avoid collisions
+  const task = { id: taskId, text, done: false };
 
   tasks.push(task);
   input.value = "";
+  taskId++;
   setMessage("Added!");
   render();
 });
