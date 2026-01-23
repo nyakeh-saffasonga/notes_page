@@ -16,23 +16,23 @@ function isNonNegInt(n){
 
 // TODO: return binary string (e.g., 42 -> "101010")
 function toBinary(decimal){
-  return "";
+  return decimal.toString(2);
 }
 
 // TODO: return hex string uppercase without prefix (e.g., 42 -> "2A")
 function toHex(decimal){
-  return "";
+  return decimal.toString(16);
 }
 
 // TODO: take a binary string (e.g., "1010") -> decimal number (10)
 // return null if invalid
 function fromBinary(binaryString){
-  return null;
+  return parseInt(binaryString, 2);
 }
 
 // TODO: take a bits number (e.g., 16) -> string like "16 bits = 2 bytes"
 function explainBytes(bits){
-  return "";
+  return (bits / 8) + " bytes";
 }
 
 function showError(msg){
@@ -51,7 +51,7 @@ convertBtn.addEventListener("click", () => {
 
   binOut.textContent = toBinary(dec);
   hexOut.textContent = toHex(dec);
-  bytesOut.textContent = explainBytes(toBinary(dec).length);
+  bytesOut.textContent = explainBytes(dec); // i edited this a little bit so that it enters the right thing in the parameter
 });
 
 fromBinBtn.addEventListener("click", () => {
