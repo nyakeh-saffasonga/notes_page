@@ -21,8 +21,21 @@ function addLine(text){
 // 70-89: "Proficient"
 // 50-69: "Developing"
 // 0-49: "Beginning"
-function categorize(score){
+
+function categorize(score) {
+
+  if (score >= 90) {
+    return "Advanced";
+  } else if (score >= 70) {
+    return "Proficient";
+  } else if (score >= 50) {
+    return "Developing";
+  } else if (score >= 0) {
+    return "Beginning";
+  }
+
   return "—";
+
 }
 
 // TODO: create a mini report of 5 lines using a loop
@@ -30,10 +43,15 @@ function categorize(score){
 // - "Next goal: reach 90"
 // - "You are 3 points away from Proficient" (depending on current band)
 // - Include at least 1 line that uses a compound condition (&& or ||)
-function buildReport(score){
-  clearReport();
 
-  // your loop here
+function buildReport(score) {
+  clearReport();
+  
+  if (categorize(score) == "Advanced") {
+
+  } else if () {
+    
+  }
 }
 
 runBtn.addEventListener("click", () => {
