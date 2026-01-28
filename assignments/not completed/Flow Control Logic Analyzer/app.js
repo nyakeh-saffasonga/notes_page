@@ -24,13 +24,13 @@ function addLine(text){
 
 function categorize(score) {
 
-  if (score >= 90) {
+  if (score >= 90 && score <= 100) {
     return "Advanced";
-  } else if (score >= 70) {
+  } else if (score >= 70 && score < 90) {
     return "Proficient";
-  } else if (score >= 50) {
+  } else if (score >= 50 && score < 70) {
     return "Developing";
-  } else if (score >= 0) {
+  } else if (score >= 0 && score < 50) {
     return "Beginning";
   }
 
@@ -47,11 +47,36 @@ function categorize(score) {
 function buildReport(score) {
   clearReport();
   
-  if (categorize(score) == "Advanced") {
-
-  } else if () {
-    
+  if (score >= 90 && score <= 100) {
+      addLine("Great job! You are already in the highest category.");
+      addLine("Keep up the good work!");
+      addLine("Challenge yourself with harder material.");
+      addLine("Consider helping others to improve.");
+      addLine("Set new goals to maintain your level.");
+      return;
+  } else if (score >= 70 && score < 90) {
+      addLine("You are " + (90 - score + i - 1) + " points away from Advanced");
+      addLine("Keep practicing to reach the next level.");
+      addLine("You are " + (score - 70) + " points into Proficient.");
+      addLine("Focus on your weak areas to improve.");
+      addLine("Stay consistent with your studies.");
+      return;
+  } else if (score >= 50 && score < 70) {
+      addLine("You are " + (70 - score + i - 1) + " points away from Proficient");
+      addLine("Keep working hard to improve your skills.");
+      addLine("You are " + (score - 50) + " points into Developing.");
+      addLine("Identify areas where you can improve.");
+      addLine("Practice regularly to boost your score.");
+      return;
+  } else if (score >= 0 && score < 50) {
+      addLine("You are " + (50 - score + i - 1) + " points away from Developing");
+      addLine("Don't be discouraged, keep trying!");
+      addLine("You are " + score + " points into Beginning.");
+      addLine("Focus on foundational concepts.");
+      addLine("Seek help when needed to improve.");
+      return;
   }
+
 }
 
 runBtn.addEventListener("click", () => {
