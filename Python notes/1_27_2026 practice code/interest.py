@@ -1,0 +1,5 @@
+principal = input("We are going to calculate simple interest! Enter the principal (initial ammount of money): ")
+rate = input("Now for the annual interest rate:")
+time = input("And the time in years: ") 
+result = float(principal) * float(rate) * float(time)
+print("Your simple interest is $" + str(round(result, 2)))
