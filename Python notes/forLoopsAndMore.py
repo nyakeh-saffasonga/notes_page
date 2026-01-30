@@ -60,4 +60,7 @@ print("it should work now")
 for num_x in [1,2,3,4,5,6,7,8]:
     for num_y in [10,11,12,13,14,15,16,17,18,19]:
         print(num_x, num_y)
+        
+the_array = ["apple", "banana", "orange", "peach"]
+the_list = [1, True, "defense", 5.43, ["reverse", 4.3, False]]
 
