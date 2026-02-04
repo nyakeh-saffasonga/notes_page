@@ -40,7 +40,7 @@ for num2 in range(50, 60):
 for num3 in range(0, 100, 5):
     print(num3)
 
-# else can be used in a for loop blovck when the loop is finished and the else block will be executed
+# else can be used in a for loop block when the loop is finished and the else block will be executed
 for num4 in range(11):
     print(num4)
 else:
@@ -63,4 +63,6 @@ for num_x in [1,2,3,4,5,6,7,8]:
         
 the_array = ["apple", "banana", "orange", "peach"]
 the_list = [1, True, "defense", 5.43, ["reverse", 4.3, False]]
+
+print(1)
 
