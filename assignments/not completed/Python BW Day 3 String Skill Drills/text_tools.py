@@ -8,6 +8,7 @@ print(sanitize_username("John Smith"))
 print(sanitize_username("A.B.C"))
 print(sanitize_username(""))
 
+
 def title_case(sentence: str) -> str:
     words = sentence.strip().split(" ") # 
     newWords = [] # 
