@@ -7,25 +7,61 @@ list2 = []
 for i in input:
 
     isIncreasing = int((str(i[0]))[0]) < int((str(i[0]))[1])
+    print(isIncreasing)
     isSafe = True
 
     for x in range(len(str(i[0])) - 1):
         print(str((str(i[0]))[x]) + " " + str((str(i[0]))[x+1]))
         print(abs(int((str(i[0]))[x]) - int((str(i[0]))[x+1])))
 
-        if abs(int((str(i[0]))[x]) - int((str(i[0]))[x+1])) < 3 and abs(int((str(i[0]))[x]) - int((str(i[0]))[x+1])) > 1:
+        if (abs(int((str(i[0]))[x]) - int((str(i[0]))[x+1])) >= 1) and (abs(int((str(i[0]))[x]) - int((str(i[0]))[x+1])) <= 3):
             if isIncreasing:
-                if int((str(i[0]))[0]) < int((str(i[0]))[1]):
+                if int((str(i[0]))[x]) < int((str(i[0]))[x+1]):
                     pass
                 else:
                     isSafe = False
             else:
-                if int((str(i[0]))[0]) > int((str(i[0]))[1]):
+                if int((str(i[0]))[x]) > int((str(i[0]))[x+1]):
                     pass
                 else:
                     isSafe = False
+        else:
+            isSafe = False
 
+    if isSafe:
+        safeReports += 1
+
+
+    isIncreasing = int((str(i[1]))[0]) < int((str(i[1]))[1])
+    isSafe = True
+
+    for y in range(len(str(i[1])) - 1):
+        print(str((str(i[1]))[y]) + " " + str((str(i[1]))[y+1]))
+        print(abs(int((str(i[1]))[y]) - int((str(i[1]))[y+1])))
+
+        if (abs(int((str(i[1]))[y]) - int((str(i[1]))[y+1])) >= 1) and (abs(int((str(i[1]))[y]) - int((str(i[1]))[y+1])) <= 3):
+            if isIncreasing:
+                if int((str(i[1]))[y]) < int((str(i[1]))[y+1]):
+                    pass
+                else:
+                    isSafe = False
+            else:
+                if int((str(i[1]))[y]) > int((str(i[1]))[y+1]):
+                    pass
+                else:
+                    isSafe = False
+        else:
+            isSafe = False
+
+    if isSafe:
+        safeReports += 1
+
+
+    print(isSafe)
     print("---------")
+
+print("SAFE REPORTS: " + str(safeReports))
+
 
 
 
