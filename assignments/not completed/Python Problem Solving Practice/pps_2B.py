@@ -746,41 +746,23 @@ for i in setup2:
 
 for i in puzzleInput:
 
-    isSafe = True
-    isIncreasing = int(i[0]) < int(i[1])
+    for y in range(len(i)):
 
-    for x in range((len(i)) - 1):
+        currentIndex = y
+        currentArray = []
 
-        num1 = int(i[x])
-        num2 = int(i[x+1])
-
+        for x in range(len(i)):
+            if x == currentIndex:
+                pass
+            else:
+                currentArray.append(i[x])
+        
+        print(currentArray)
+    
+    
 
         
-        if abs(num1 - num2) >= 1 and abs(num1 - num2) <= 3:
-            if isIncreasing:
-                if num1 < num2:
-                    pass
-                else:
-                    isSafe = False
-            else:
-                if num1 > num2:
-                    pass
-                else:
-                    isSafe = False  
-        else:
-            isSafe = False
-
-    if isSafe:
-        safeReports += 1
+    
 
 
 print("SAFE REPORTS: " + str(safeReports))
-
-
-
-
-
-
-
-
-
