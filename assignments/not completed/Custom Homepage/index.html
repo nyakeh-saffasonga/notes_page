@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>  
+        <h1> >> cyber's corner </h1>
+        <h1> Good [time of day], [name] </h1>
+        <h2 class="date"> It is [day], [month] [number], [year]. </h2>
+        <h2 class="time"> 0:00XM </h2>
+    </header>
+
+    <br>
+
+    <div class="searchbar">
+        <form action="">
+            <input type="text" placeholder="Search...">
+        </form>
+    </div>
+
+    <br>
+
+    <nav>
+        <button data-target="General">General</button>
+        <button data-target="School">School</button>
+        <button data-target="Personal">Personal</button>
+        <button data-target="Gaming">Gaming</button>
+        
+
+        <div class="General">
+            <button class="Google"></button>
+            <button class="YouTube"></button>
+            <button class="Gmail"></button>
+            <button class="Google Docs"></button>
+            <button class="Google Slides"></button>
+            <button class="Google Sheets"></button>
+        </div>
+
+        <div class="School">
+            <button class="DVUSD Canvas"></button>
+            <button class=""></button>
+            <button class=""></button>
+            <button class="West-MEC Canvas"></button>
+            <button class=""></button>
+            <button class=""></button>
+        </div>
+
+        <div class="Personal">
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+        </div>
+
+        <div class="Gaming">
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+        </div>
+        
+    </nav>
+</body>
+</html>
+
+<!-- 1. Set up the HTML
+Create your buttons and corresponding sections. Give each section a unique ID and a common class for easier selection in JavaScript. Use data-* attributes on the buttons to link them to their target section IDs. 
+Stack Overflow
+Stack Overflow
+ +3
+html
+<button data-target="section1">Button 1</button>
+<button data-target="section2">Button 2</button>
+<button data-target="section3">Button 3</button>
+
+<div id="section1" class="section-content">
+  <h2>Section 1 Content</h2>
+  <p>This is the content for section 1.</p>
+</div>
+<div id="section2" class="section-content">
+  <h2>Section 2 Content</h2>
+  <p>This is the content for section 2.</p>
+</div>
+<div id="section3" class="section-content">
+  <h2>Section 3 Content</h2>
+  <p>This is the content for section 3.</p>
+</div>
+2. Style with CSS
+Initially hide all content sections using CSS. A utility class, like .hidden, is used to control visibility. 
+css
+.section-content {
+  display: none; /* Hides the element completely, no space is occupied */
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+/* Optional: Add a class for the active/visible section */
+.section-content.active {
+  display: block; /* Makes the element visible */
+}
+3. Add JavaScript Functionality 
+Use JavaScript to add event listeners to the buttons. The function should hide all sections first, then show only the specific section corresponding to the clicked button. 
+javascript
+// Get all buttons and content sections
+const buttons = document.querySelectorAll('button[data-target]');
+const sections = document.querySelectorAll('.section-content');
+
+// Add click event listener to each button
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Get the target section ID from the data-target attribute
+        const targetId = button.getAttribute('data-target');
+        
+        // Hide all sections first
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Show the specific target section by adding the 'active' class
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+    });
+});
+This approach allows you to reuse the code for multiple sections on the same page and keeps your JavaScript clean and flexible. You can find more detailed examples on resources like W3Schools and Stack Overflow.  -->

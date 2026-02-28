@@ -145,5 +145,17 @@ horizontal = []
 vertical = []
 lDiagonal = []
 rDiagonal = []
+lookFor = r"XMAS|SAMX"
 nextAppend = ""
+
+for i in input: # horizontal
+    horizontal.append(i)
+
+for i in range(len(horizontal[0])): # vertical
+    for x in horizontal:
+        nextAppend += horizontal[i]
+    vertical.append(nextAppend)
+    nextAppend = ""
+
+print(vertical)
 
