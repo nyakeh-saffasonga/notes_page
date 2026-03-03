@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Inconsolata;
+    src: url(./Inconsolata_Expanded-Black.ttf);
+}
+
+* {
+    font-family: Inconsolata;
+}
+    
+h1{
+    color:blueviolet
+}
