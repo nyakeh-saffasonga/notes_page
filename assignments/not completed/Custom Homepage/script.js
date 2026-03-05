@@ -1,8 +1,8 @@
 // "cyber's corner" typewriter animation
 
 let titleElement = document.querySelector("h1");
-let fullText = titleElement.innerText; // stores the original text
-titleElement.innerText = ""; // clears it to start the animation
+let fullText = ">> cyber's corner <<" // stores the original text
+titleElement.innerText = ">"; // clears it to start the animation
 let index = 0;
 
 setInterval(() => {
@@ -12,7 +12,7 @@ setInterval(() => {
     } else {
         // where it stops
         titleElement.innerText = fullText;
-        clearInterval(titleAnimation);
+        clearInterval();
     }
 }, 100);
 
@@ -45,6 +45,22 @@ setInterval(updateTime , 1000);
 
 
 // welcoming message
+
+let date = new Date();
+let welcomerElement = document.getElementById("welcome");
+let timeOfDay = "";
+console.log(date.getHours());
+
+if (date.getHours() < 12) {
+    timeOfDay = 'midnight';
+  } else if (date.getHours() < 18) { // After 12 PM and before 6 PM
+    timeOfDay = 'morning';
+  } else if (date.getHours() < 18) {
+    timeOfDay = 'afternoon';
+  } else {
+    timeOfDay = 'evening';
+  }
+
 
 
 
