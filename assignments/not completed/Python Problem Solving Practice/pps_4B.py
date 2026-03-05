@@ -1,5 +1,3 @@
-import re
-
 input = """XMMXMASAMSAAAXSXMASAMSMXSAMXMMMMXMSSSSXMAMSAMXMSXMMASAMXMMMMAXMXMSMSMXSXMXSMXXSAXXMSXSMXXXSASXSMMSSSMMXMAMSMSSSMXMAXXXXSSXXXXMXSXAXMASMMSASM
 SAMXXAMXMAMAMMMAXSAXMAAMSMSXSAXMAMAAASAMXMSASAMMAMXAAASAMAASAMXXSAAAMMSAMASMMAMASMMSAMXSXMSASAAXAXMAMMAMAMAAAAAAAXSMMMMMMMMMXMAMXMAXXMAXSAMX
 MAAAMSSMSASASASXMXMXSMSMXAAAXAXSAMMSMXXMSXSMMAMSAMMMMAMASXMMXMMMSMSASASAMASASAMAMAAMAMASXAMAMXMMMXSAMSMSASMMMSMMMXAAXAAAAAAXAMASAMAASMSMMXMX
@@ -139,60 +137,23 @@ XAAMAMAMXMXXXMAMXAXXSXMSXSSSMXXMMXMMMSMAAAXMMASMAXMASMXSAXXAAASASAMXAMMAMMMMXMMM
 SSXMAMXXMSMMMSXMSXMAMAXMMMMAMSSMMXAAAXMSSSXMXAAMSMMMSXAMAXXXMMXXSMMSAMMXMAXXMXASMMSAMAMMSMAMXASMMSSXAXMXMMAMMSXMAMMXSAMMSMMMXSXAMSXMMSXMSMSM
 MASXMSMMMAAMAAAMXMASXMMSAMSSMAAAAXSMMSAXAXAXMMSAAAAASMXSAMMSMSXMMMASAMASMMMASXXSAAMXMASAXMSMAMMAXMMMSMMAMMMSMAXSAAMAMASAXASXAMMSMMASAMAXAAAM
 SAMXAAAASMSMSSXMAXAXAMXSAXAAMSSMMMAAXMMMAMMSAMXMSSMMSAAMASAAAAXAXMASAMASAAXSXMASXMASMAMMSAAMMMSSMAASAASMSAAAMMMSSSXASAMXSAXMASAMXMASAMMSMSMS
-MXSMSMSMSMMAMXMSXMMSMMXSXMSSMXAMXXSXMSAMXMASXSXMXAMXMMMSAMXMAMASAMXSAMSSMMMXAMAMMXXMASXAMMMSXXXASXSSXXXMAMSXSXXMAMMASMMXMAMSMXMAMXMSAMXXXXAX
-"""
+MXSMSMSMSMMAMXMSXMMSMMXSXMSSMXAMXXSXMSAMXMASXSXMXAMXMMMSAMXMAMASAMXSAMSSMMMXAMAMMXXMASXAMMMSXXXASXSSXXXMAMSXSXXMAMMASMMXMAMSMXMAMXMSAMXXXXAX"""
 
-horizontal = []
-vertical = []
-lDiagonal = []
-rDiagonal = []
-toFind = r'XMAS|SAMX'
-nextAppend = ""
+
 count = 0
+rows = input.splitlines()
 
-for i in input: # horizontal
-        horizontal.append(i)
+for row in range(1, len(rows) - 1): # gotta start from 1 and end at len(rows) - 1 to avoid an indexing error when i check the top and bottom rows (because you can't have an x pattern there anyways)
+    for column in range(1, len(rows[row]) - 1):
+        topLeft = rows[row - 1][column - 1]
+        topRight = rows[row - 1][column + 1]
+        bottomLeft = rows[row + 1][column - 1]
+        bottomRight = rows[row + 1][column + 1]
 
-for i in range(len(horizontal[0])): # vertical
-    nextAppend = ""
+        if rows[row][column] == "A":
+            if topLeft == "S" and bottomLeft == "S" and topRight == "M" and bottomRight == "M":
+                count += 1
+            if topLeft == "M" and bottomLeft == "M" and topRight == "S" and bottomRight == "S":
+                count += 1
 
-    for j in range(len(horizontal)):
-        nextAppend += horizontal[j][i]
-
-    vertical.append(nextAppend)
-
-for i in range(len(horizontal) + len(horizontal[0]) - 1): # left diagonal
-    nextAppend = ""
-
-    for j in range(len(horizontal)):
-        if i - j < len(horizontal[0]) and i - j >= 0:
-            nextAppend += horizontal[j][i - j]
-
-    lDiagonal.append(nextAppend)
-
-for i in range(len(horizontal) + len(horizontal[0]) - 1): # right diagonal
-    nextAppend = ""
-
-    for j in range(len(horizontal)):
-        if i - j < len(horizontal[0]) and i - j >= 0:
-            nextAppend += horizontal[len(horizontal) - 1 - j][i - j]
-
-    rDiagonal.append(nextAppend)
-
-
-
-# counts them all up
-
-for i in horizontal:
-    count += len(re.findall(toFind, i))
-
-for i in vertical:
-    count += len(re.findall(toFind, i))
-
-for i in lDiagonal:
-    count += len(re.findall(toFind, i))
-
-for i in rDiagonal:
-    count += len(re.findall(toFind, i))
-
-print("XMAS FOUND: " + str(count))
+print("X PATTERNS: " + str(count))
