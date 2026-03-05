@@ -1,3 +1,5 @@
+/* general settings */
+
 @font-face {
     font-family: Inconsolata;
     src: url(./Inconsolata_Expanded-Black.ttf);
@@ -7,22 +9,44 @@
     font-family: Inconsolata;
 }
 
-body {
-    background-image: url("https://static.vecteezy.com/system/resources/previews/012/979/472/non_2x/modern-high-resolution-black-geometric-background-with-polygonal-grid-abstract-black-metallic-hexagonal-pattern-simple-illustration-vector.jpg");
-    background-size: contain;
-    color: white
+/* the background */
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0vh 0%; 
+    }
+    100% {
+        background-position: 0vh 1250%;
+    }
 }
-    
-h1{
-    color:blueviolet;
-    text-shadow: 0 0 10px blueviolet;
+
+body {
+    color: white;
+
+    background-image: url("https://static.vecteezy.com/system/resources/previews/012/979/472/non_2x/modern-high-resolution-black-geometric-background-with-polygonal-grid-abstract-black-metallic-hexagonal-pattern-simple-illustration-vector.jpg");
+    background-size: cover;
+    animation: moveBackground 55s linear infinite;
     text-align: center;
 }
 
+/* main searchbar */
+
+h1 { /* cyber's coner text */
+    color:blueviolet;
+    text-shadow: 0 0 1.75vh blueviolet;
+    text-align: center;
+    justify-content: center;
+    font-size: 325%;
+    margin-bottom: 3vh;
+}
+
+
 .searchbar {
-    display: flex;
-    height: 5vh;
-    align-self: center;
+    display: inline-block;
+    margin-top: 7.5vh;
+    height: 10vh;
+    text-align: center;
+    justify-content: center;
 }
 
 .searchbar form input, .searchbar form button {
@@ -30,15 +54,24 @@ h1{
     background-color: black;
     border-color: blueviolet;
     color: white;
-    height: 5vh;
-    width: auto;
+    height: 9vh;
+    width: 55vw;
     vertical-align: middle;
+    font-size: 3vh;
 }
 
 .searchbar form button {
-    height: 6vh
+    height: 10vh;
+    width: auto;
 }
 
 .searchbar form button img {
-    height: 4.2vh;
+    height: 5.2vh;
+    width: 5.2vw;
+}
+
+.timeTracker {
+    text-align: left;
+    font-size: small;
+    margin: auto;
 }
