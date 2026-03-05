@@ -28,6 +28,7 @@ body {
     animation: moveBackground 55s linear infinite;
     text-align: center;
     min-height: 100vh;
+    width: 98vw;
 }
 
 /* main searchbar */
