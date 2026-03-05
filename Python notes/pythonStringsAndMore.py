@@ -101,5 +101,8 @@ print(f"This is a test if \"This was all a dream\" quotes")
 
 # string methods
 
+letters = "abc"
+    
+print(str(letters.index("a")))
 
 

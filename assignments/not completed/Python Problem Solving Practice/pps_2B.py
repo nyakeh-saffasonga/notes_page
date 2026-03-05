@@ -739,30 +739,86 @@ setup1 = """46 49 49 48 47 43
 
 setup2 = re.split("\n", setup1)
 puzzleInput = []
-safeReports = 0
+existingSafes = []
+count = 0
 
 for i in setup2:
     puzzleInput.append(i.split())
 
-for i in puzzleInput:
+for i in puzzleInput: # creates a list of existing safe reports without removing any indexes
 
-    for y in range(len(i)):
+    isSafe = True
+    isIncreasing = int(i[0]) < int(i[1])
 
-        currentIndex = y
-        currentArray = []
+    for x in range((len(i)) - 1):
 
-        for x in range(len(i)):
-            if x == currentIndex:
-                pass
+        num1 = int(i[x])
+        num2 = int(i[x+1])
+        
+        if abs(num1 - num2) >= 1 and abs(num1 - num2) <= 3:
+            if isIncreasing:
+                if num1 < num2:
+                    pass
+                else:
+                    isSafe = False
             else:
-                currentArray.append(i[x])
-        
-        print(currentArray)
-    
-    
+                if num1 > num2:
+                    pass
+                else:
+                    isSafe = False  
+        else:
+            isSafe = False
+
+    if isSafe:
+        count += 1
+        existingSafes.append(i)
+
+
+for i in puzzleInput: # this one checks for unsafe reports
+
+    if i not in existingSafes: # if its not already safe, check it
+
+        isSafe = True
+
+        for y in range(len(i)): # this loop checks the unsafe report by removing indexes and re-checking the list without that index
+
+            currentArray = []
+
+            for x in range(len(i)): # creates a current array by removing the yth index
+                if x == y:
+                    pass
+                else:
+                    currentArray.append(i[x])
 
         
-    
+            for z in range((len(currentArray)) - 1): # checks if the current array is safe
 
+                num1 = int(currentArray[z])
+                num2 = int(currentArray[z+1])
+                isIncreasing = int(currentArray[0]) < int(currentArray[1])
 
-print("SAFE REPORTS: " + str(safeReports))
+                if abs(num1 - num2) >= 1 and abs(num1 - num2) <= 3:
+                    if isIncreasing:
+                        if num1 < num2:
+                            pass
+                        else:
+                            isSafe = False
+                    else:
+                        if num1 > num2:
+                            pass
+                        else:
+                            isSafe = False  
+                else:
+                    isSafe = False
+                
+                if isSafe:
+                    count += 1
+                    break # if its EVER safe, it breaks this loop...
+            
+            if isSafe:
+                break  # ...and moves on to the next iteration
+        
+    else:
+        pass
+
+print("SAFE REPORTS: " + str(count))

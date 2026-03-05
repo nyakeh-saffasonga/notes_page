@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber's Corner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>  
+        
+        <h2 id="date"> It is [day], [month] [number], [year]. </h2>
+        <h2 id="time"> 0:00XM </h2>
+        <h1> >> cyber's corner << </h1>
+        <h2 id="welcome"> Good [time of day], [name] </h2>
+    </header>
+
+
+
+    <br>
+
+
+
+    <div class="searchbar">
+        <form action="https://www.google.com/search" method="get">
+            <input type="text" name="q" placeholder="Search Google...">
+            <button type="submit"><img src="./search-alt-2-svgrepo-com.svg"></button>
+        </form>
+    </div>
+
+
+
+    <br>
+    <br>
+
+
+
+    <nav>
+        
+        <div class="quickTabs">
+
+            <button data-target="Main">Main</button>
+            <button data-target="General">General</button>
+            <button data-target="School">School</button>
+            <button data-target="Personal">Personal</button>
+            <button data-target="Gaming">Gaming</button>
+
+            <div class="Main">
+                <button id="Google">Google</button>
+                <button id="YouTube">YouTube</button>
+                <button id="Discord">Discord</button>
+                <button id="Roblox">Roblox</button>
+                <button id="Google Sheets">Google Sheets</button>
+                <button id="Netflix">Netflix</button>
+                <button id="Anime">Anime</button>
+            </div>
+
+            <div class="General">
+                <button id="Google">Google</button>
+                <button id="YouTube">YouTube</button>
+                <button id="Gmail">Gmail</button>
+                <button id="Google Docs">Google Docs</button>
+                <button id="Google Slides">Google Slides</button>
+                <button id="Google Sheets">Google Sheets</button>
+            </div>
+
+            <div class="School">
+                <button id="DVUSD Home Page">DVUSD Home Page</button>
+                <button id="DVUSD Canvas">DVUSD Canvas</button>
+                <button id="DVUSD PowerSchool">DVUSD PowerSchool</button>
+                <button id="West-MEC Home Page">West-MEC Home Page</button>
+                <button id="West-MEC Canvas">West-MEC Canvas</button>
+                <button id="West-MEC Focus">West-MEC Focus</button>
+            </div>
+
+            <div class="Personal">
+                <button id="Discord">Discord</button>
+                <button id="TikTok">TikTok</button>
+                <button id="Instagram">Instagram</button>
+                <button id="Netflix">Netflix</button>
+                <button id="Anime">Anime</button>
+                <button id=""></button>
+            </div>
+
+            <div class="Gaming">
+                <button id="Roblox">Roblox</button>
+                <button id="Steam">Steam</button>
+                <button id=""></button>
+                <button id=""></button>
+                <button id=""></button>
+                <button id=""></button>
+            </div>
+
+        </div>
+
+        <div class="recentTabs">
+            <h3> || Recent Tabs || </h3>
+            <div id="recentTab1"></div>
+            <div id="recentTab2"></div>
+            <div id="recentTab3"></div>
+            <div id="recentTab4"></div>
+            <div id="recentTab5"></div>
+        </div>
+        
+
+        
+    </nav>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
+<!-- 1. Set up the HTML
+Create your buttons and corresponding sections. Give each section a unique ID and a common class for easier selection in JavaScript. Use data-* attributes on the buttons to link them to their target section IDs. 
+Stack Overflow
+Stack Overflow
+ +3
+html
+<button data-target="section1">Button 1</button>
+<button data-target="section2">Button 2</button>
+<button data-target="section3">Button 3</button>
+
+<div id="section1" class="section-content">
+  <h2>Section 1 Content</h2>
+  <p>This is the content for section 1.</p>
+</div>
+<div id="section2" class="section-content">
+  <h2>Section 2 Content</h2>
+  <p>This is the content for section 2.</p>
+</div>
+<div id="section3" class="section-content">
+  <h2>Section 3 Content</h2>
+  <p>This is the content for section 3.</p>
+</div>
+2. Style with CSS
+Initially hide all content sections using CSS. A utility class, like .hidden, is used to control visibility. 
+css
+.section-content {
+  display: none; /* Hides the element completely, no space is occupied */
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+/* Optional: Add a class for the active/visible section */
+.section-content.active {
+  display: block; /* Makes the element visible */
+}
+3. Add JavaScript Functionality 
+Use JavaScript to add event listeners to the buttons. The function should hide all sections first, then show only the specific section corresponding to the clicked button. 
+javascript
+// Get all buttons and content sections
+const buttons = document.querySelectorAll('button[data-target]');
+const sections = document.querySelectorAll('.section-content');
+
+// Add click event listener to each button
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Get the target section ID from the data-target attribute
+        const targetId = button.getAttribute('data-target');
+        
+        // Hide all sections first
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Show the specific target section by adding the 'active' class
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+    });
+});
+This approach allows you to reuse the code for multiple sections on the same page and keeps your JavaScript clean and flexible. You can find more detailed examples on resources like W3Schools and Stack Overflow.  -->

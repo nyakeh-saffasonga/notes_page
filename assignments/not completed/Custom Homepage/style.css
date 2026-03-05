@@ -1,0 +1,44 @@
+@font-face {
+    font-family: Inconsolata;
+    src: url(./Inconsolata_Expanded-Black.ttf);
+}
+
+* {
+    font-family: Inconsolata;
+}
+
+body {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/012/979/472/non_2x/modern-high-resolution-black-geometric-background-with-polygonal-grid-abstract-black-metallic-hexagonal-pattern-simple-illustration-vector.jpg");
+    background-size: contain;
+    color: white
+}
+    
+h1{
+    color:blueviolet;
+    text-shadow: 0 0 10px blueviolet;
+    text-align: center;
+}
+
+.searchbar {
+    display: flex;
+    height: 5vh;
+    align-self: center;
+}
+
+.searchbar form input, .searchbar form button {
+    border-radius: 50cap;
+    background-color: black;
+    border-color: blueviolet;
+    color: white;
+    height: 5vh;
+    width: auto;
+    vertical-align: middle;
+}
+
+.searchbar form button {
+    height: 6vh
+}
+
+.searchbar form button img {
+    height: 4.2vh;
+}
