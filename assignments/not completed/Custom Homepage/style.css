@@ -16,16 +16,16 @@
         background-position: 0vh 0%; 
     }
     100% {
-        background-position: 0vh 1250%;
+        background-position: 0vh 620%;
     }
 }
 
 body {
     color: white;
-    background-image: url("https://static.vecteezy.com/system/resources/previews/012/979/472/non_2x/modern-high-resolution-black-geometric-background-with-polygonal-grid-abstract-black-metallic-hexagonal-pattern-simple-illustration-vector.jpg");
+    background-image: url("./modern-high-resolution-black-geometric-background-with-polygonal-grid-abstract-black-metallic-hexagonal-pattern-simple-illustration-vector.jpg");
     background-size: cover;
     background-attachment: fixed;
-    animation: moveBackground 55s linear infinite;
+    animation: moveBackground 8.5s linear infinite;
     text-align: center;
     min-height: 100vh;
     width: 98vw;
@@ -74,6 +74,67 @@ h1 { /* cyber's coner text */
 
 .timeTracker {
     text-align: left;
-    font-size: small;
+    font-size: smaller;
     margin: auto;
+}
+
+/* welcome text randomizer */
+
+#welcome {
+    animation: fadeAppear 3s ease forwards;
+}
+
+@keyframes fadeAppear {
+    0%{
+        transform: scale(0.75);
+        opacity: 0; 
+    }
+    10% {
+        transform: scale(0.75);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* tabs + the buttons iside of them */
+
+.sectionContent {
+    display: none; 
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sectionContent.active {
+    display: block;
+}
+
+.tabGroupSelector {
+    border-radius: 50cap;
+    background-color: black;
+    border-color: blueviolet;
+    color: white;
+    font-size: 150%;
+    width: 10vw;
+    height: 6vh;
+    text-align: center;
+}
+
+.tabButton {
+    border-radius: 50cap;
+    background-color: black;
+    border-color: blueviolet;
+    height: 12vh;
+    width: 6.5vw;
+    vertical-align: middle;
+
+}
+
+.tabButton img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
 }

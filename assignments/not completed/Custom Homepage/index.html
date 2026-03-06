@@ -9,8 +9,7 @@
 <body>
 
     <div class="timeTracker">
-        <h2 id="date"> </h2>
-        <h2 id="time"> </h2>
+        <h2 id="date"> </h2> 
     </div>
 
     <search> 
@@ -32,7 +31,7 @@
     <br>
 
 
-    <h2 id="welcome"> Good [time of day], [name] </h2>
+    <h2 id="welcome"> </h2> <!-- needed for the welcome text randomizer -->
 
 
 
@@ -42,56 +41,90 @@
         
         <div class="quickTabs">
 
-            <button data-target="Main">Main</button>
-            <button data-target="General">General</button>
-            <button data-target="School">School</button>
-            <button data-target="Personal">Personal</button>
-            <button data-target="Gaming">Gaming</button>
+            <button class="tabGroupSelector" data-target="Main">Main</button>
+            <button class="tabGroupSelector" data-target="General">General</button>
+            <button class="tabGroupSelector" data-target="School">School</button>
+            <button class="tabGroupSelector" data-target="Personal">Personal</button>
+            <button class="tabGroupSelector" data-target="Gaming">Gaming</button>
 
-            <div class="Main">
-                <button id="Google">Google</button>
-                <button id="YouTube">YouTube</button>
-                <button id="Discord">Discord</button>
-                <button id="Roblox">Roblox</button>
-                <button id="Google Sheets">Google Sheets</button>
-                <button id="Netflix">Netflix</button>
-                <button id="Anime">Anime</button>
+            <div id="Main" class="sectionContent">
+                <button class="tabButton">Google</button>
+                <button class="tabButton">Discord</button>
+                <button class="tabButton">Roblox</button>
+                <button class="tabButton">Google Sheets</button>
+                <button class="tabButton">Netflix</button>
+                <button class="tabButton">Anime</button>
+                <button class="tabButton"><a href="https://www.youtube.com/"><img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/572/small_2x/youtube-logo-youtube-icon-transparent-free-png.png" alt="YouTube Logo"></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
             </div>
 
-            <div class="General">
-                <button id="Google">Google</button>
-                <button id="YouTube">YouTube</button>
-                <button id="Gmail">Gmail</button>
-                <button id="Google Docs">Google Docs</button>
-                <button id="Google Slides">Google Slides</button>
-                <button id="Google Sheets">Google Sheets</button>
+            <div id="General" class="sectionContent">
+                <button class="tabButton">YouTube</button>
+                <button class="tabButton">Google</button>
+                <button class="tabButton">Gmail</button>
+                <button class="tabButton">Google Docs</button>
+                <button class="tabButton">Google Slides</button>
+                <button class="tabButton">Google Sheets</button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
             </div>
 
-            <div class="School">
-                <button id="DVUSD Home Page">DVUSD Home Page</button>
-                <button id="DVUSD Canvas">DVUSD Canvas</button>
-                <button id="DVUSD PowerSchool">DVUSD PowerSchool</button>
-                <button id="West-MEC Home Page">West-MEC Home Page</button>
-                <button id="West-MEC Canvas">West-MEC Canvas</button>
-                <button id="West-MEC Focus">West-MEC Focus</button>
+            <div id="School" class="sectionContent">
+                <button class="tabButton">DVUSD Home Page</button>
+                <button class="tabButton">DVUSD Canvas</button>
+                <button class="tabButton">DVUSD PowerSchool</button>
+                <button class="tabButton">West-MEC Home Page</button>
+                <button class="tabButton">West-MEC Canvas</button>
+                <button class="tabButton">West-MEC Focus</button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
             </div>
 
-            <div class="Personal">
-                <button id="Discord">Discord</button>
-                <button id="TikTok">TikTok</button>
-                <button id="Instagram">Instagram</button>
-                <button id="Netflix">Netflix</button>
-                <button id="Anime">Anime</button>
-                <button id=""></button>
+            <div id="Personal" class="sectionContent">
+                <button class="tabButton">Discord</button>
+                <button class="tabButton">TikTok</button>
+                <button class="tabButton">Instagram</button>
+                <button class="tabButton">Netflix</button>
+                <button class="tabButton">Anime</button>
+                <button class="tabButton"></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
             </div>
 
-            <div class="Gaming">
-                <button id="Roblox">Roblox</button>
-                <button id="Steam">Steam</button>
-                <button id=""></button>
-                <button id=""></button>
-                <button id=""></button>
-                <button id=""></button>
+            <div id="Gaming" class="sectionContent">
+                <button class="tabButton">Roblox</button>
+                <button class="tabButton">Steam</button>
+                <button class="tabButton"></button>
+                <button class="tabButton"></button>
+                <button class="tabButton"></button>
+                <button class="tabButton"></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
             </div>
 
         </div>

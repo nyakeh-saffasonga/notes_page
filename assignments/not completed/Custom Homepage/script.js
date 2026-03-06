@@ -31,9 +31,7 @@ function updateTime() {
 
     let date = new Date();
 
-    currentDateElement.innerText = `${days[date.getDay() - 1]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`; // current day
-
-    timeElement.innerText = `${date.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`; // live clock
+    currentDateElement.innerText = `${days[date.getDay() - 1]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()} | ${date.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`; // current day
 
 }
 
@@ -44,22 +42,67 @@ setInterval(updateTime , 1000);
 
 
 
-// welcoming message
+// welcoming message randomizer
 
 let date = new Date();
 let welcomerElement = document.getElementById("welcome");
 let timeOfDay = "";
-console.log(date.getHours());
+let messageRandomizer = Math.floor(Math.random() * 5) + 1;
+let message = "";
 
-if (date.getHours() < 12) {
-    timeOfDay = 'midnight';
-  } else if (date.getHours() < 18) { // After 12 PM and before 6 PM
-    timeOfDay = 'morning';
-  } else if (date.getHours() < 18) {
-    timeOfDay = 'afternoon';
-  } else {
-    timeOfDay = 'evening';
-  }
+if (date.getHours() >= 0 && date.getHours() <= 5) {
+  timeOfDay = 'midnight';
+} else if (date.getHours() >= 6 && date.getHours() <= 11) { // After 12 PM and before 6 PM
+  timeOfDay = 'morning';
+} else if (date.getHours() >= 12 && date.getHours() <= 18) {
+  timeOfDay = 'afternoon';
+} else {
+  timeOfDay = 'evening';
+}
+
+console.log(timeOfDay);
+
+
+if (messageRandomizer == 1) {
+  message = (timeOfDay == 'midnight') ? `You should probably go to bed, Nyakeh.` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `Good afternoon, Nyakeh.` : `Good evening, Nyakeh.`
+} else if (messageRandomizer == 2) {
+  message = (timeOfDay == 'midnight') ? `Staying up yet again, Nyakeh?` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `How has your day been, Nyakeh?` : `Good evening, Nyakeh.`
+} else if (messageRandomizer == 3) {
+  message = (timeOfDay == 'midnight') ? `Have a nice sleep, Nyakeh.` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `Good afternoon, Nyakeh.` : `Good evening, Nyakeh.`
+} else if (messageRandomizer == 4) {
+  message = (timeOfDay == 'midnight') ? `Have a nice sleep, Nyakeh.` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `Good afternoon, Nyakeh.` : `Good evening, Nyakeh.`
+} else {
+  message = (timeOfDay == 'midnight') ? `Have a nice sleep, Nyakeh.` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `Good afternoon, Nyakeh.` : `Good evening, Nyakeh.`
+}
+
+welcomerElement.innerText = message;
+
+
+
+
+
+// tabs
+
+let buttons = document.querySelectorAll('button[data-target]');
+let sections = document.querySelectorAll('.sectionContent');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+
+        let targetId = button.getAttribute('data-target');
+        
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        let targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+    });
+});
+
+
 
 
 
