@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber's Corner</title>
+    <link rel="icon" type="image/x-icon" href="./favicon_io/android-chrome-512x512.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="timeTracker">
-        <h2 id="date"> </h2> 
+    <div class="themeToggle">
+        <button id="themeSwitch">Toggle Color</button>
     </div>
 
     <search> 
@@ -20,7 +21,7 @@
 
             <form action="https://www.google.com/search" method="get">
                 <input type="text" name="q" placeholder="Search Google...">
-                <button type="submit"><img src="./search-alt-2-svgrepo-com.svg"></button>
+                <button type="submit"><img class="search-icon" src="./search-alt-2-svgrepo-com.svg"></button>
             </form>
 
         </div>
@@ -33,9 +34,17 @@
 
     <h2 id="welcome"> </h2> <!-- needed for the welcome text randomizer -->
 
+    <div class="recentTabs">
+        <div id="recentTab1"><button class="tabButton"><a href=""><img src="" alt=""></a></button></div>
+        <div id="recentTab2"><button class="tabButton"><a href=""><img src="" alt=""></a></button></div>
+        <div id="recentTab3"><button class="tabButton"><a href=""><img src="" alt=""></a></button></div>
+        <div id="recentTab4"><button class="tabButton"><a href=""><img src="" alt=""></a></button></div>
+        <div id="recentTab5"><button class="tabButton"><a href=""><img src="" alt=""></a></button></div>
+        <div id="recentTab6"><button class="tabButton"><a href=""><img src="" alt=""></a></button></div>
+        <div id="recentTab7"><button class="tabButton"><a href=""><img src="" alt=""></a></button></div>
+    </div>
 
-
-
+    <br>
 
     <nav>
         
@@ -44,167 +53,72 @@
             <button class="tabGroupSelector" data-target="Main">Main</button>
             <button class="tabGroupSelector" data-target="General">General</button>
             <button class="tabGroupSelector" data-target="School">School</button>
-            <button class="tabGroupSelector" data-target="Personal">Personal</button>
+            <button class="tabGroupSelector" data-target="Social">Social</button>
             <button class="tabGroupSelector" data-target="Gaming">Gaming</button>
 
             <div id="Main" class="sectionContent">
-                <button class="tabButton">Google</button>
-                <button class="tabButton">Discord</button>
-                <button class="tabButton">Roblox</button>
-                <button class="tabButton">Google Sheets</button>
-                <button class="tabButton">Netflix</button>
-                <button class="tabButton">Anime</button>
-                <button class="tabButton"><a href="https://www.youtube.com/"><img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/572/small_2x/youtube-logo-youtube-icon-transparent-free-png.png" alt="YouTube Logo"></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="https://discord.com"><img src="https://pngimg.com/d/discord_PNG11.png" alt="Discord"></a></button>
+                <button class="tabButton"><a href="https://www.roblox.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Roblox_Corporation_2025_logo.svg/960px-Roblox_Corporation_2025_logo.svg.png" alt="Roblox"></a></button>
+                <button class="tabButton"><a href="https://docs.google.com/spreadsheets/?usp=sheets_ald&authuser=0"><img src="https://mailmeteor.com/logos/assets/PNG/Google_Sheets_Logo_512px.png" alt="Google Sheets"></a></button>
+                <button class="tabButton"><a href="https://www.netflix.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Netflix_2016_N_logo.svg/500px-Netflix_2016_N_logo.svg.png" alt="Netflix"></a></button>
+                <button class="tabButton"><a href="https://www.crunchyroll.com"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Crunchyroll_Logo.png" alt="Anime"></a></button>
+                <button class="tabButton"><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube"></a></button>
             </div>
 
             <div id="General" class="sectionContent">
-                <button class="tabButton">YouTube</button>
-                <button class="tabButton">Google</button>
-                <button class="tabButton">Gmail</button>
-                <button class="tabButton">Google Docs</button>
-                <button class="tabButton">Google Slides</button>
-                <button class="tabButton">Google Sheets</button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube"></a></button>
+                <button class="tabButton"><a href="https://mail.google.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1280px-Gmail_icon_%282020%29.svg.png" alt="Gmail"></a></button>
+                <button class="tabButton"><a href="https://docs.google.com"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png" alt="Google Docs"></a></button>
+                <button class="tabButton"><a href="https://docs.google.com/spreadsheets/?usp=sheets_ald&authuser=0"><img src="https://mailmeteor.com/logos/assets/PNG/Google_Sheets_Logo_512px.png" alt="Google Sheets"></a></button>
+                <button class="tabButton"><a href="https://docs.google.com/presentation"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Google_Slides_logo_%282014-2020%29.svg/1920px-Google_Slides_logo_%282014-2020%29.svg.png" alt="Google Slides"></a></button>
             </div>
 
             <div id="School" class="sectionContent">
-                <button class="tabButton">DVUSD Home Page</button>
-                <button class="tabButton">DVUSD Canvas</button>
-                <button class="tabButton">DVUSD PowerSchool</button>
-                <button class="tabButton">West-MEC Home Page</button>
-                <button class="tabButton">West-MEC Canvas</button>
-                <button class="tabButton">West-MEC Focus</button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="https://www.dvusd.org"><img src="./Adobe Express - file.png" alt="DVUSD Home Page"></a></button>
+                <button class="tabButton"><a href="https://www.dvusd.org/departments/cia/edtech/digital-platforms/canvas"><img src="https://www.wabash.edu/images2/technology/canvas.png" alt="DVUSD Canvas"></a></button>
+                <button class="tabButton"><a href="https://ps.dvusd.org/public/home.html"><img src="https://companieslogo.com/img/orig/PWSC-358b9060.png?t=1720244493" alt="DVUSD PowerSchool"></a></button>
+                <button class="tabButton"><a href="https://www.west-mec.edu/"><img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_1/v1720461598/westmecorg/ckmbbpmldqjd9j6kznpt/Arrow_2.png" alt="West-MEC Home Page"></a></button>
+                <button class="tabButton"><a href="https://launcher.myapps.microsoft.com/api/signin/5ce05a53-6d2e-4ad7-bf61-097b14476d25?tenantId=6dedeafc-3c7d-4d7c-81ec-77a899d34f66"><img src="https://www.wabash.edu/images2/technology/canvas.png" alt="West-MEC Canvas"></a></button>
+                <button class="tabButton"><a href="https://launcher.myapps.microsoft.com/api/signin/3a3990ee-dd63-498c-9ab9-341bd9f13870?tenantId=6dedeafc-3c7d-4d7c-81ec-77a899d34f66"><img src="https://core-docs.s3.amazonaws.com/hillsborough_county_public_schools_ar/article/image/3e3d2942-c818-487d-b50d-2ee97e7406f0.png" alt="West-MEC Focus"></a></button>
             </div>
 
-            <div id="Personal" class="sectionContent">
-                <button class="tabButton">Discord</button>
-                <button class="tabButton">TikTok</button>
-                <button class="tabButton">Instagram</button>
-                <button class="tabButton">Netflix</button>
-                <button class="tabButton">Anime</button>
-                <button class="tabButton"></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+            <div id="Social" class="sectionContent">
+                <button class="tabButton"><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube"></a></button>
+                <button class="tabButton"><a href="https://discord.com"><img src="https://pngimg.com/d/discord_PNG11.png" alt="Discord"></a></button>
+                <button class="tabButton"><a href="https://www.tiktok.com"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_nK0p_A5pkD2VdxDYh_iP6eeSYJoOdB8mcw&s" alt="TikTok"></a></button>
+                <button class="tabButton"><a href="https://www.instagram.com"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a></button>
+                <button class="tabButton"><a href="https://www.netflix.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Netflix_2016_N_logo.svg/500px-Netflix_2016_N_logo.svg.png" alt="Netflix"></a></button>
+                <button class="tabButton"><a href="https://www.crunchyroll.com"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Crunchyroll_Logo.png" alt="Anime"></a></button>
             </div>
 
             <div id="Gaming" class="sectionContent">
-                <button class="tabButton">Roblox</button>
-                <button class="tabButton">Steam</button>
-                <button class="tabButton"></button>
-                <button class="tabButton"></button>
-                <button class="tabButton"></button>
-                <button class="tabButton"></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
-                <button class="tabButton"><a href="#"><img src="" alt=""></a></button>
+                <button class="tabButton"><a href="https://www.roblox.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Roblox_Corporation_2025_logo.svg/960px-Roblox_Corporation_2025_logo.svg.png" alt="Roblox"></a></button>
+                <button class="tabButton"><a href="https://steampowered.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/960px-Steam_icon_logo.svg.png" alt="Steam"></a></button>
             </div>
 
         </div>
-
-        <div class="recentTabs">
-            <h3> || Recent Tabs || </h3>
-            <div id="recentTab1"></div>
-            <div id="recentTab2"></div>
-            <div id="recentTab3"></div>
-            <div id="recentTab4"></div>
-            <div id="recentTab5"></div>
-        </div>
-        
-
-        
+    
     </nav>
+
+    <main class="selfNotes">
+        <h2>Self Notes</h2>
+        <p>Here you can write down any notes you want to remember, such as homework assignments, reminders, or anything else you want to jot down.</p>
+        <textarea id="notes" placeholder="Write your notes here..."></textarea>
+    </main>
+
+    <br>
+    
+    <div class="musicPlayer">
+        <audio controls>
+            <source src="./fracturedSignal.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="timeTracker">
+        <h2 id="date"> </h2> 
+    </div>
 
     <script src="./script.js"></script>
 </body>
 </html>
-
-<!-- 1. Set up the HTML
-Create your buttons and corresponding sections. Give each section a unique ID and a common class for easier selection in JavaScript. Use data-* attributes on the buttons to link them to their target section IDs. 
-Stack Overflow
-Stack Overflow
- +3
-html
-<button data-target="section1">Button 1</button>
-<button data-target="section2">Button 2</button>
-<button data-target="section3">Button 3</button>
-
-<div id="section1" class="section-content">
-  <h2>Section 1 Content</h2>
-  <p>This is the content for section 1.</p>
-</div>
-<div id="section2" class="section-content">
-  <h2>Section 2 Content</h2>
-  <p>This is the content for section 2.</p>
-</div>
-<div id="section3" class="section-content">
-  <h2>Section 3 Content</h2>
-  <p>This is the content for section 3.</p>
-</div>
-2. Style with CSS
-Initially hide all content sections using CSS. A utility class, like .hidden, is used to control visibility. 
-css
-.section-content {
-  display: none; /* Hides the element completely, no space is occupied */
-  padding: 20px;
-  border: 1px solid #ccc;
-  margin-top: 10px;
-}
-
-/* Optional: Add a class for the active/visible section */
-.section-content.active {
-  display: block; /* Makes the element visible */
-}
-3. Add JavaScript Functionality 
-Use JavaScript to add event listeners to the buttons. The function should hide all sections first, then show only the specific section corresponding to the clicked button. 
-javascript
-// Get all buttons and content sections
-const buttons = document.querySelectorAll('button[data-target]');
-const sections = document.querySelectorAll('.section-content');
-
-// Add click event listener to each button
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Get the target section ID from the data-target attribute
-        const targetId = button.getAttribute('data-target');
-        
-        // Hide all sections first
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // Show the specific target section by adding the 'active' class
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            targetSection.classList.add('active');
-        }
-    });
-});
-This approach allows you to reuse the code for multiple sections on the same page and keeps your JavaScript clean and flexible. You can find more detailed examples on resources like W3Schools and Stack Overflow.  -->

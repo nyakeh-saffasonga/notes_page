@@ -1,5 +1,14 @@
 /* general settings */
 
+:root {
+    --primary-color: blueviolet;
+    --bg-color: black;
+    --text-color: white;
+    --border-radius: 50cap;
+    --gap-spacing: 10px;
+    --border-width: 1px;
+}
+
 @font-face {
     font-family: Inconsolata;
     src: url(./Inconsolata_Expanded-Black.ttf);
@@ -21,7 +30,7 @@
 }
 
 body {
-    color: white;
+    color: var(--text-color);
     background-image: url("./modern-high-resolution-black-geometric-background-with-polygonal-grid-abstract-black-metallic-hexagonal-pattern-simple-illustration-vector.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -31,11 +40,35 @@ body {
     width: 98vw;
 }
 
+
+/* theme toggler */
+
+.themeToggle button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: var(--border-width) solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+body.alternate-theme {
+  --primary-color: #ff0000;
+}
+
+body.alternate-theme .search-icon {
+  filter: invert(25%) sepia(86%) saturate(3000%) hue-rotate(358deg) brightness(95%) contrast(85%);
+}
+
+
 /* main searchbar */
 
 h1 { /* cyber's coner text */
-    color:blueviolet;
-    text-shadow: 0 0 1.75vh blueviolet;
+    color: var(--primary-color);
+    text-shadow: 0 0 1.75vh var(--primary-color);
     text-align: center;
     justify-content: center;
     font-size: 325%;
@@ -52,10 +85,10 @@ h1 { /* cyber's coner text */
 }
 
 .searchbar form input, .searchbar form button {
-    border-radius: 50cap;
-    background-color: black;
-    border-color: blueviolet;
-    color: white;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    border-color: var(--primary-color);
+    color: var(--text-color);
     height: 9vh;
     width: 55vw;
     vertical-align: middle;
@@ -72,10 +105,23 @@ h1 { /* cyber's coner text */
     width: 5.2vw;
 }
 
+/* time tracker */
+
 .timeTracker {
+    position: fixed;
     text-align: left;
     font-size: smaller;
     margin: auto;
+    bottom: -5px;
+}
+
+/* music player */
+
+.musicPlayer {
+    position: fixed;
+    bottom: 10px;
+    right: -10%;
+    transform: translateX(-50%);
 }
 
 /* welcome text randomizer */
@@ -101,6 +147,16 @@ h1 { /* cyber's coner text */
 
 /* tabs + the buttons iside of them */
 
+.recentTabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-spacing);
+
+}
+
+
 .sectionContent {
     display: none; 
     padding: 20px;
@@ -109,14 +165,18 @@ h1 { /* cyber's coner text */
 }
 
 .sectionContent.active {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-spacing);
 }
 
 .tabGroupSelector {
-    border-radius: 50cap;
-    background-color: black;
-    border-color: blueviolet;
-    color: white;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    border-color: var(--primary-color);
+    color: var(--text-color);
     font-size: 150%;
     width: 10vw;
     height: 6vh;
@@ -124,17 +184,135 @@ h1 { /* cyber's coner text */
 }
 
 .tabButton {
-    border-radius: 50cap;
-    background-color: black;
-    border-color: blueviolet;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    border-color: var(--primary-color);
     height: 12vh;
     width: 6.5vw;
     vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: var(--border-width) solid var(--primary-color);
+}
 
+.tabButton a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .tabButton img {
-    width: 120%;
-    height: 120%;
-    object-fit: cover;
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
 }
+
+/* notes */
+.selfNotes textarea {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* media queries */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 185%;
+    }
+    #welcome {
+        font-size: 100%;
+    }
+    .searchbar form input {
+        width: 80vw;
+    }
+    .tabGroupSelector {
+        width: 18vw;
+        height: 8vh;
+        font-size: 180%;
+    }
+    .tabButton {
+        width: 15vw;
+        height: 18vh;
+        min-width: 60px;
+    }
+    .quickTabs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sectionContent {
+        display: none;
+        padding: 20px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .sectionContent.active {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100vw;
+        padding: 10px;
+    }
+    .tabGroupSelector {
+        margin: 5px 0;
+        width: 90vw;
+    }
+    .tabButton {
+        margin: 10px 0;
+    }
+    .musicPlayer {
+        position: static;
+        display: block;
+        bottom: auto;
+        right: auto;
+        transform: none;
+    }
+    .timeTracker {
+        position: static;
+        display: block;
+        bottom: auto;
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+        font-size: 250%;
+    }
+    .searchbar form input {
+        width: 70vw;
+    }
+    .tabGroupSelector {
+        width: 15vw;
+        height: 7vh;
+        font-size: 160%;
+    }
+    .tabButton {
+        width: 10vw;
+        height: 15vh;
+        min-width: 80px;
+    }
+    .sectionContent.active {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .musicPlayer {
+        position: static;
+        display: block;
+        bottom: auto;
+        right: auto;
+        transform: none;
+    }
+    .timeTracker {
+        position: static;
+        display: block;
+        bottom: auto;
+        margin: 10px 0;
+    }
+}
+

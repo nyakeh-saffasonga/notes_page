@@ -31,7 +31,8 @@ function updateTime() {
 
     let date = new Date();
 
-    currentDateElement.innerText = `${days[date.getDay() - 1]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()} | ${date.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`; // current day
+    currentDateElement.innerText = `${days[date.getDay() - 1]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}
+    ${date.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`; // current day
 
 }
 
@@ -64,15 +65,15 @@ console.log(timeOfDay);
 
 
 if (messageRandomizer == 1) {
-  message = (timeOfDay == 'midnight') ? `You should probably go to bed, Nyakeh.` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `Good afternoon, Nyakeh.` : `Good evening, Nyakeh.`
+  message = (timeOfDay == 'midnight') ? `You should probably go to bed, NAME.` : (timeOfDay == 'morning') ? `Good morning, NAME.` : (timeOfDay == 'afternoon') ? `Good afternoon, NAME.` : `Good evening, NAME.`
 } else if (messageRandomizer == 2) {
-  message = (timeOfDay == 'midnight') ? `Staying up yet again, Nyakeh?` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `How has your day been, Nyakeh?` : `Good evening, Nyakeh.`
+  message = (timeOfDay == 'midnight') ? `Staying up yet again, NAME?` : (timeOfDay == 'morning') ? `It's a new day, NAME.` : (timeOfDay == 'afternoon') ? `How has your day been, NAME?` : `The evening is so nice, isn't it, NAME?`
 } else if (messageRandomizer == 3) {
-  message = (timeOfDay == 'midnight') ? `Have a nice sleep, Nyakeh.` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `Good afternoon, Nyakeh.` : `Good evening, Nyakeh.`
+  message = (timeOfDay == 'midnight') ? `Sweet dreams, NAME.` : (timeOfDay == 'morning') ? `Rise and shine, NAME!` : (timeOfDay == 'afternoon') ? `Hope you're having a great day, NAME.` : `Time to wind down, NAME.`
 } else if (messageRandomizer == 4) {
-  message = (timeOfDay == 'midnight') ? `Have a nice sleep, Nyakeh.` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `Good afternoon, Nyakeh.` : `Good evening, Nyakeh.`
+  message = (timeOfDay == 'midnight') ? `Burning the midnight oil, NAME?` : (timeOfDay == 'morning') ? `Coffee time, NAME?` : (timeOfDay == 'afternoon') ? `Afternoon slump hitting you yet, NAME?` : `Almost the end of the day, NAME.`
 } else {
-  message = (timeOfDay == 'midnight') ? `Have a nice sleep, Nyakeh.` : (timeOfDay == 'morning') ? `You Good morning, Nyakeh.` : (timeOfDay == 'afternoon') ? `Good afternoon, Nyakeh.` : `Good evening, Nyakeh.`
+  message = (timeOfDay == 'midnight') ? `NAME, go to bed!` : (timeOfDay == 'morning') ? `Good morning to you, NAME!` : (timeOfDay == 'afternoon') ? `Still going strong, NAME?` : `Evening vibes, NAME.`
 }
 
 welcomerElement.innerText = message;
@@ -81,7 +82,7 @@ welcomerElement.innerText = message;
 
 
 
-// tabs
+// quick tabs
 
 let buttons = document.querySelectorAll('button[data-target]');
 let sections = document.querySelectorAll('.sectionContent');
@@ -101,6 +102,112 @@ buttons.forEach(button => {
         }
     });
 });
+
+
+document.addEventListener('keydown', (event) => {
+    let key = event.key;
+    if (key >= '1' && key <= '5') {
+        let index = parseInt(key) - 1;
+        if (buttons[index]) {
+            buttons[index].click();
+        }
+    }
+});
+
+
+
+
+
+// note saving
+
+let notesElement = document.getElementById('notes');
+
+notesElement.value = localStorage.getItem('userNotes') || '';
+notesElement.addEventListener('input', () => {
+    localStorage.setItem('userNotes', notesElement.value);
+});
+
+
+
+
+
+// recent tabs list
+
+let recentTabs = JSON.parse(localStorage.getItem('recentTabs')) || [];
+let maxRecentTabs = 7;
+
+
+function addRecentTab(title, url, imageUrl) {
+
+    if (url === '#') return; 
+
+    recentTabs = recentTabs.filter(tab => tab.url !== url);
+    recentTabs.unshift({ title, url, imageUrl, timestamp: new Date().toLocaleTimeString() });
+    if (recentTabs.length > maxRecentTabs) {
+        recentTabs.pop();
+    }
+    localStorage.setItem('recentTabs', JSON.stringify(recentTabs));
+    
+    updateRecentDisplay();
+    attachTabListeners();
+}
+
+
+function updateRecentDisplay() {
+    for (let i = 1; i <= 7; i++) {
+        let element = document.getElementById(`recentTab${i}`);
+        if (element) {
+            element.innerHTML = '';
+        }
+    }
+    
+    let validTabs = recentTabs.filter(tab => tab.imageUrl && tab.url && tab.url !== '#');
+    
+    validTabs.forEach((tab, index) => {
+        let element = document.getElementById(`recentTab${index + 1}`);
+        if (element) {
+            element.innerHTML = `
+                <button class="tabButton">
+                    <a href="${tab.url}" target="_blank" title="${tab.title} (${tab.timestamp})">
+                        <img src="${tab.imageUrl}" alt="${tab.title}">
+                    </a>
+                </button>
+            `;
+        }
+    });
+}
+
+function attachTabListeners() {
+    document.querySelectorAll('.tabButton a').forEach(link => {
+        link.removeEventListener('click', handleTabClick);
+        link.addEventListener('click', handleTabClick);
+    });
+}
+
+function handleTabClick(e) {
+    let title = this.querySelector('img').alt;
+    let url = this.href;
+    let imageUrl = this.querySelector('img').src;
+    addRecentTab(title, url, imageUrl);
+}
+
+
+attachTabListeners();
+updateRecentDisplay();
+
+
+
+
+
+// theme toggler
+
+let themeButton = document.getElementById('themeSwitch');
+
+if (themeButton) {
+  themeButton.addEventListener('click', () => {
+    document.body.classList.toggle('alternate-theme');
+  });
+}
 
 
 
