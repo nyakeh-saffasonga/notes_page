@@ -131,77 +131,129 @@ input = """
  ....#......#.##..#......##..........#.......#............#...............#....#....................................#..........#.#. 
                                                                                                                                   """
 
-mapGrid = input.split("\n")
-guardPosition = None
-guardDirection = "^"
+inputMap = input.split("\n")
+
+mapGrid = []
+for line in inputMap:
+    mapGrid.append(list(line))
+
 guardX = 0
 guardY = 0
-counter = 1
-alreadyVisited = []
 
 for i in range(len(mapGrid)):
     for x in range(len(mapGrid[i])):
-        if "^" in mapGrid[i][x]:
-            guardPosition = mapGrid[i][x]
+        if mapGrid[i][x] == "^":
             guardY = i
             guardX = x
 
-alreadyVisited.append([guardX, guardY])
+# -------------------------
+# Part 1: get the path tiles
+# -------------------------
+pathTiles = set()
 
-while mapGrid[guardY][guardX] != " ":
+gx = guardX
+gy = guardY
+direction = "^"
 
-    guardPosition = mapGrid[guardY][guardX] 
+while True:
+    pathTiles.add((gx, gy))
 
-    if guardDirection == "^":
-        if mapGrid[guardY - 1][guardX] == "#":
-            guardDirection = ">"
-        elif mapGrid[guardY - 1][guardX] == " ":
+    if direction == "^":
+        if gy - 1 < 0:
             break
+        if mapGrid[gy - 1][gx] == "#":
+            direction = ">"
         else:
-            guardY -= 1
-            if [guardX, guardY] in alreadyVisited:
-                pass
-            else:
-                alreadyVisited.append([guardX, guardY])
-                counter += 1
+            gy -= 1
 
-    if guardDirection == ">":
-        if mapGrid[guardY][guardX + 1] == "#":
-            guardDirection = "v"
-        elif mapGrid[guardY][guardX + 1] == " ":
+    elif direction == ">":
+        if gx + 1 >= len(mapGrid[0]):
             break
+        if mapGrid[gy][gx + 1] == "#":
+            direction = "v"
         else:
-            guardX += 1
-            if [guardX, guardY] in alreadyVisited:
-                pass
-            else:
-                alreadyVisited.append([guardX, guardY])
-                counter += 1
+            gx += 1
 
-    if guardDirection == "v":
-        if mapGrid[guardY + 1][guardX] == "#":
-            guardDirection = "<"
-        elif mapGrid[guardY + 1][guardX] == " ":
+    elif direction == "v":
+        if gy + 1 >= len(mapGrid):
             break
+        if mapGrid[gy + 1][gx] == "#":
+            direction = "<"
         else:
-            guardY += 1
-            if [guardX, guardY] in alreadyVisited:
-                pass
-            else:
-                alreadyVisited.append([guardX, guardY])
-                counter += 1
+            gy += 1
 
-    if guardDirection == "<":
-        if mapGrid[guardY][guardX - 1] == "#":
-            guardDirection = "^"
-        elif mapGrid[guardY][guardX - 1] == " ":
+    elif direction == "<":
+        if gx - 1 < 0:
             break
+        if mapGrid[gy][gx - 1] == "#":
+            direction = "^"
         else:
-            guardX -= 1
-            if [guardX, guardY] in alreadyVisited:
-                pass
-            else:
-                alreadyVisited.append([guardX, guardY])
-                counter += 1
+            gx -= 1
 
-print("DISTINCT VISITED CELLS: " + str(counter))
+# -------------------------
+# Part 2: test only the path tiles
+# -------------------------
+possiblePositions = 0
+
+for (testX, testY) in pathTiles:
+
+    if mapGrid[testY][testX] != ".":
+        continue
+    if testX == guardX and testY == guardY:
+        continue
+
+    gx = guardX
+    gy = guardY
+    direction = "^"
+
+    visitedStates = set()
+    looped = False
+
+    while True:
+
+        state = (gx, gy, direction)
+        if state in visitedStates:
+            looped = True
+            break
+        visitedStates.add(state)
+
+        if direction == "^":
+            if gy - 1 < 0:
+                break
+
+            if (gy - 1 == testY and gx == testX) or mapGrid[gy - 1][gx] == "#":
+                direction = ">"
+            else:
+                gy -= 1
+
+        elif direction == ">":
+            if gx + 1 >= len(mapGrid[0]):
+                break
+
+            if (gy == testY and gx + 1 == testX) or mapGrid[gy][gx + 1] == "#":
+                direction = "v"
+            else:
+                gx += 1
+
+        elif direction == "v":
+            if gy + 1 >= len(mapGrid):
+                break
+
+            if (gy + 1 == testY and gx == testX) or mapGrid[gy + 1][gx] == "#":
+                direction = "<"
+            else:
+                gy += 1
+
+        elif direction == "<":
+            if gx - 1 < 0:
+                break
+
+            if (gy == testY and gx - 1 == testX) or mapGrid[gy][gx - 1] == "#":
+                direction = "^"
+            else:
+                gx -= 1
+
+    if looped:
+        possiblePositions += 1
+
+print("POSSIBLE LOOP POSITIONS: " + str(possiblePositions))
