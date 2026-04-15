@@ -5,7 +5,7 @@
     --header-color: #a67ffc;
     --header-glow: #dad7e3;
     --text-color: #FFFFFF;
-    --border-radius: 50cap;
+    --border-radius: 0.25cap;
     --gap-spacing: 10px;
     --border-width: 1px;
 }
@@ -15,17 +15,24 @@
     src: url(./assets/fonts/canva/CanvaSans-Bold.otf);
 }
 
+@font-face {
+    font-family: Fira Code;
+    src: url(./assets/fonts/fira/FiraCode-Bold.ttf);
+}
+
 body {
     background-image: radial-gradient(var(--bg-color1), var(--bg-color2));
     height: 100vh;
     color: var(--text-color);
+    font-family: Canva Sans;
 }
 
 h2 {
-    font-family: Canva Sans;
+    font-family: Fira Code;
     text-align: center;
     font-size: 4.5rem;
-    color: var(--header-color);
+    color: var(--header-glow);
+    text-shadow: 0 0 10px var(--primary-color)
 }
 
 a {
@@ -35,4 +42,28 @@ a {
 
 button {
     background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    border: var(--header-glow);
+    font-size: 2rem;
+    font-family: Canva Sans;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--header-color);
+    font-size: 3rem;
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+.homeNavbar {
+    justify-items: center;
+    gap: var(--gap-spacing);
+    margin: 0 auto;
+}
+
+.homeNavbar button {
+    display: flex;
+    gap: var(--gap-spacing);
+    margin-bottom: 1rem;
 }
