@@ -1,0 +1,38 @@
+:root {
+    --bg-color1: #000000;
+    --bg-color2: #29115a;
+    --primary-color: #8a5bf9;
+    --header-color: #a67ffc;
+    --header-glow: #dad7e3;
+    --text-color: #FFFFFF;
+    --border-radius: 50cap;
+    --gap-spacing: 10px;
+    --border-width: 1px;
+}
+
+@font-face {
+    font-family: Canva Sans;
+    src: url(./assets/fonts/canva/CanvaSans-Bold.otf);
+}
+
+body {
+    background-image: radial-gradient(var(--bg-color1), var(--bg-color2));
+    height: 100vh;
+    color: var(--text-color);
+}
+
+h2 {
+    font-family: Canva Sans;
+    text-align: center;
+    font-size: 4.5rem;
+    color: var(--header-color);
+}
+
+a {
+    text-decoration-line: none;
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--primary-color);
+}
