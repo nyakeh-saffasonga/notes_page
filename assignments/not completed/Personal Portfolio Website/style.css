@@ -52,26 +52,23 @@ body {
     display: grid;
     position: fixed; 
     z-index: -1000;
-    grid-template-columns: repeat(5, 20vw);
-    grid-template-rows: repeat(5, 20vw);
+    grid-template-columns: repeat(20, 5vw);
+    grid-template-rows: repeat(20, 5vw);
     opacity: 0.2;
     pointer-events: none;
 }
 
 .hexagonGrid div {
-    aspect-ratio: 1; /* Forces the container to be square */
-
+    aspect-ratio: 1; 
+    overflow: visible;
 }
 
-.hexagonGrid:nth-child(even) {
-    visibility: hidden;
-}
 
 .hexagonGrid img {
     filter: invert(70%) sepia(100%) saturate(1000%) hue-rotate(235deg) brightness(100%) contrast(100%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 200%;
+    height: 200%;
+    object-fit: contain;
 }
 
 .leftBound, .rightBound {
