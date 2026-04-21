@@ -99,7 +99,50 @@ body {
     background-color:var(--bg-color2);
 }
 
+.navbarDisplay {
+    width: 95%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color:var(--bg-color2);
+    font-family: OCR A Extended;
+    align-items: center;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 67vw;
+}
+
+.leftNavbarDisplay {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rightNavbarDisplay {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2vw;
+}
+
+.navbarDisplay > div > a {
+    color: var(--text-color);
+
+}
+
 h2 { /* using h2 as the header for the home page */
+    font-family: Fira Code;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 0rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 0.5rem #0800ff;
+}
+
+h1 {
     font-family: Fira Code;
     text-align: center;
     font-size: 2rem;
@@ -169,6 +212,10 @@ button:hover {
     padding: 0 0.2rem 0 0.2rem;
 }
 
+.desktopResumeLink {
+    display: none;
+}
+
 footer {
     background-color:var(--bg-color2);
     width: 100%;
@@ -190,5 +237,5 @@ footer {
     display: flex;
     justify-content: center; 
     align-items: center;
-    color:gray;
+    color:rgb(103, 98, 98);
 }
